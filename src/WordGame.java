@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class WordGame {
 
- //Beginning of story. Go here to restart
+  //Beginning of story. Go here to restart
     static void beginning(){
         
          Scanner kb = new Scanner(System.in);
@@ -19,6 +19,11 @@ public class WordGame {
         }
         
     }
+    
+    static void gameOver(){
+        System.out.println("Game over...Thanks for playing!");
+               
+    };
 
   
     // First questions
@@ -51,7 +56,7 @@ public class WordGame {
                 }
                 else {
                     //Game over
-                    System.out.println("Game over! Thanks for playing!");
+                    gameOver();
                 }
                 break;
             case 2:
@@ -80,7 +85,7 @@ public class WordGame {
                        beginning();
                    }
                    else {
-                       System.out.println("Game over! Thanks for playing!");
+                       gameOver();
                    }
                    break;
                case 2:
@@ -91,7 +96,8 @@ public class WordGame {
                        beginning();
                    }
                    else {
-                       System.out.println("Game over! Thanks for playing!");
+                       gameOver();
+                       
                    }
                    break;
            }
@@ -115,8 +121,31 @@ public class WordGame {
                 System.out.println("You roll your window down and call them over. The older hobo comes over to accept your gift, his eyes tear up as he thanks you.");
                 System.out.println("As he walks back, his friend lifts his head up to thank you and instantly you recognize the face.\nIt's Jenner. Boy did his life turn to shit after you ditched him.");
                 System.out.println("He gets up and starts running towards your car, his eyes light up with desperation, but you floor it as the light turns green.\nNot today Jenner, not today.");
+                System.out.println("");
                 
+                System.out.println("Press 1 to continue");
+                int continueChoice = kb.nextInt();
+                
+                if (continueChoice == 1) {
+                    //Continue to third part
+                    thirdPart();
+                }
+                else {
+                    System.out.println("You pressed the wrong button! Try again!\n");
+                    secondPart();
+                }
+                break;
+                
+            case 2:
+                //Working here
         }
+        
+        
+    };
+    
+    static void thirdPart() {
+        
+        System.out.println("Part 3");
         
         
     };
@@ -131,4 +160,3 @@ public class WordGame {
 
     }
 }
-
