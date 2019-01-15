@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 public class Playground {
 
@@ -8,29 +7,29 @@ public class Playground {
 
     public static void main(String[] args) {
 
+        double[] hoursWorked = {9, 9.3, 4.2, 8.7, 10.1};
 
-            Scanner kb = new Scanner(System.in);
+        //Adding all the hours
 
-            System.out.println("What is your favorite number?");
+        double sum = 0;
 
-            int x = kb.nextInt();
+        for (int x = 0; x < hoursWorked.length; x++) {
+            sum += hoursWorked[x];
+        }
 
-            if (x > 0){
-                do
-                {
-                    System.out.println("Your number: " + x + " is still greater than 0");
-                    x--;
-                }while (x>0);
+        System.out.println("You worked a total of " + sum + " hours this week");
 
 
-            } else if (x == 0){
-                System.out.println("You're entered zero!");
-            } else {
-                System.out.println("Please enter a positive number");
+        //Finding the largest number
+
+        double max = hoursWorked[0];
+        for (int x = 0; x < hoursWorked.length; x++) {
+            if (hoursWorked[x] > max) {
+                max = hoursWorked[x];
             }
+        }
 
-
-
+        System.out.println("The most hours you worked was: " + max);
 
     }
 }
