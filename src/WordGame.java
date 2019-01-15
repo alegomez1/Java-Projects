@@ -1,6 +1,65 @@
 import java.util.Scanner;
 
 public class WordGame {
+	
+	
+	//Testing instructions to start off
+	static void instructions(){
+		Scanner kb = new Scanner(System.in);
+		
+		System.out.println("Introduction\n");
+		System.out.println("This is a simple text game that uses your input to build a story\n");
+		System.out.println("You can select choices by typing the numbers on your keyboard\n");
+		System.out.println("If you're ready press 1 to continue!\n");
+		
+		int continue = kb.nextInt();
+		
+		if(continue == 1) {
+		nameIntro();	
+		}
+		else {
+			
+		gameOver();	
+		}
+		
+	};
+	
+	//Testing an intro where it asks for name and welcomes user
+	static void nameIntro(){
+		Scanner kb = new Scanner(System.in);
+		
+		System.outprintln("Welcome fellow adventurer! Are you ready to embark on the quest of your life?");
+		System.outprintln("1: Absolutely let's go!");
+		System.outprintln("2: Eh, maybe some other time...");
+		
+		int continue = kb.nextInt();
+		
+		if(continue == 1) {
+			
+			askName();
+			
+		}
+		else {
+		System.outprintln("You're no fun! Time to end your game!\n");
+		gameOver();
+		}
+		
+		
+	};
+	
+	static void askName() {
+		
+		Scanner kb = new Scanner(System.in);
+		
+		System.outprintln("What's your name fellow adventurer?");
+		
+		String name = kb.nextLine();
+		
+		System.outprintln(name +" sounds like a really sexy and kinky name... Can't wait to go on this adventure with you..");
+		
+	}
+	
+	
 
   //Beginning of story. Go here to restart
     static void beginning(){
@@ -127,7 +186,7 @@ public class WordGame {
                 int continueChoice = kb.nextInt();
                 
                 if (continueChoice == 1) {
-                    //Continue to third part
+                    //Continue to third part	
                     thirdPart();
                 }
                 else {
@@ -137,7 +196,18 @@ public class WordGame {
                 break;
                 
             case 2:
-                //Working here
+                System.out.println("Damn that's a little harsh, but ok. You wait until the light turns green");
+                System.out.println("\nPress 1 to continue after the green light.");
+                int greenLight = kb.nextInt();
+                if(greenLight == 1) {
+                  thirdPart();
+                  
+                }
+                else{
+                 System.out.println("You didn't press 1 you rule breaker but let's continue anyway...\n\n"); 
+									thirdPart();
+                }
+                break;
         }
         
         
@@ -160,3 +230,9 @@ public class WordGame {
 
     }
 }
+
+
+
+//Doing work on thirdPart() here
+
+
