@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/FinalWordGame/FinalWordGame.iml" filepath="$PROJECT_DIR$/FinalWordGame/FinalWordGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/Multiple Classes Test/Multiple Classes Test.iml" filepath="$PROJECT_DIR$/Multiple Classes Test/Multiple Classes Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/Playground/Playground.iml" filepath="$PROJECT_DIR$/Playground/Playground.iml" />
       <module fileurl="file://$PROJECT_DIR$/Testing.iml" filepath="$PROJECT_DIR$/Testing.iml" />

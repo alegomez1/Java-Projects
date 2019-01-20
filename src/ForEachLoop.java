@@ -14,8 +14,7 @@ public class ForEachLoop {
         System.out.println("\n");
         //Integer array
         int[] age = {20, 22, 24, 43};
-        for (int x: age
-             ) {
+        for (int x: age) {
             System.out.print(x);
             System.out.print(",");
 
