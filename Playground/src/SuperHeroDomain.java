@@ -3,11 +3,22 @@ public class SuperHeroDomain {
 
     //define your attributes here:
 
-    String firstName, lastName, superPowers, favoriteColor;
+    private String firstName, lastName, superPowers, favoriteColor;
 
 
     //define your constructor here:
 
+    //Default constructor
+
+    public SuperHeroDomain() {
+        this.firstName = "";
+        this.lastName = "";
+        this.superPowers = "";
+        this.favoriteColor = "";
+    }
+
+
+    //Nondefault constructor
     public SuperHeroDomain(String firstName, String lastName, String superPowers, String favoriteColor) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -54,6 +65,7 @@ public class SuperHeroDomain {
     }
 
     //define your toString here:
+
 
 
     @Override

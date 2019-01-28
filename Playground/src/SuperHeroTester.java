@@ -1,12 +1,28 @@
 import java.util.Scanner;
 
-public class SuperHeroTester {
+public class SuperHeroTester
+{
+    public static SuperHeroDomain aSuperHero;
 
-    public static void main(String[] args) {
+    /**
+     * This program
+     */
+    public static void main(String[] args)
+    {
+//        getDataFromUser();
+//        determineSuperHeroIdentity();
 
-        getDataFromUser();
-        determineSuperHeroIdentity();
+        testMethod();
     }
+
+    public static void testMethod() {
+        SuperHeroDomain testing = new SuperHeroDomain();
+        testing.setFirstName("Jason");
+        System.out.println(testing.getFirstName());
+
+
+}
+
 
     public static void getDataFromUser()
     {
@@ -20,28 +36,12 @@ public class SuperHeroTester {
         System.out.println("What is your favorite color?");
         String favoriteColor = keyboard.nextLine();
 
-       SuperHeroDomain aSuperHero = new SuperHeroDomain(firstName, lastName, superPower, favoriteColor);
+        aSuperHero = new SuperHeroDomain(firstName, lastName, superPower, favoriteColor);
 
     }
 
     public static void determineSuperHeroIdentity()
     {
-// Adding this here allows the symbols inside aSuperHero to be resolved
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("What is your first name?");
-        String firstName = keyboard.nextLine();
-        System.out.println("What is your last name?");
-        String lastName = keyboard.nextLine();
-        System.out.println("What is your super power?");
-        String superPower = keyboard.nextLine();
-        System.out.println("What is your favorite color?");
-        String favoriteColor = keyboard.nextLine();
-
-        SuperHeroDomain aSuperHero = new SuperHeroDomain(firstName, lastName, superPower, favoriteColor);
-
-        // SuperHeroDomain aSuperHero = new SuperHeroDomain(firstName, lastName, superPower, favoriteColor);
-
-
         System.out.println(aSuperHero);
 
         if (aSuperHero.getFavoriteColor().equalsIgnoreCase("red"))
