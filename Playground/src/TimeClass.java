@@ -3,12 +3,20 @@ public class TimeClass {
     public static void main(String[] args) {
 
         TimeClassDomain tunaObject = new TimeClassDomain();
-        System.out.println(tunaObject.toMilitaryTime());
-        tunaObject.setTime(7, 27, 6);
-        System.out.println(tunaObject.toString());
 
-        tunaObject.setTime(15, 55, 8);
-        System.out.println(tunaObject.toString() +"\n" +   tunaObject.toMilitaryTime());
+        TimeClassDomain tunaObject2 = new TimeClassDomain(5);
+
+        TimeClassDomain tunaObject3 = new TimeClassDomain(5, 23);
+
+        TimeClassDomain tunaObject4 = new TimeClassDomain(5, 23, 12);
+
+        System.out.printf("%s\n", tunaObject.toMilitaryTime());
+
+        System.out.printf("%s\n", tunaObject2.toMilitaryTime());
+
+        System.out.printf("%s\n", tunaObject3.toMilitaryTime());
+
+        System.out.printf("%s\n", tunaObject4.toMilitaryTime());
 
 
 
