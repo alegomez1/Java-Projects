@@ -134,6 +134,7 @@ public class PizzaTester
 
 
 
+
     }
 
 
@@ -167,10 +168,45 @@ public class PizzaTester
         }
         //Task #2a: Determine how many more toppings and concatenate them to the toppings String variable, and add 1 to numberOfToppings for each topping:
 
+        if (aPizzaOrder.getPepperoniTopping())
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Additional Pepperoni ";
+        }
+
+        if (aPizzaOrder.getSausageTopping())
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Additional Sausage ";
+        }
+
+        if (aPizzaOrder.getOnionTopping())
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Additional Onion ";
+        }
+
+        if (aPizzaOrder.getMushroomTopping())
+        {
+            numberOfToppings += 1;
+            toppings = toppings + "Additional Mushroom ";
+        }
 
 
         //Task #2b:  Set the initial cost of the pizza based upon the size. Hint:  Use an if-statement (10inch = 10.99; 12inch = 12.99; 14inch = 14.99; 16inch = 16.99)
 
+        if (aPizzaOrder.getPizzaSize() == 10) {
+            cost = 10.99;
+        }
+        else if (aPizzaOrder.getPizzaSize() == 12) {
+            cost = 12.99;
+        }
+        else if (aPizzaOrder.getPizzaSize() == 14) {
+            cost = 14.99;
+        }
+        else if (aPizzaOrder.getPizzaSize() == 16) {
+            cost = 16.99;
+        }
 
 
         // Finalize the total cost of the pizza:
@@ -178,7 +214,7 @@ public class PizzaTester
 
 
         //Display the pizza order confirmation:
-        JOptionPane.showMessageDialog(null, "Your order is as follows: " + "\n One " + aPizzaOrder.getPizzaSize() + " inch pizza \n" + crust + " crust " + toppings + ".");
+        JOptionPane.showMessageDialog(null, "Your order is as follows: " + "\nOne " + aPizzaOrder.getPizzaSize() + " inch pizza \n" + crust + " crust " + toppings + ".");
 
         return cost;
 
@@ -191,6 +227,16 @@ public class PizzaTester
     public static double checkForDiscount()
     {
         double discount = 0;
+
+        String customerName = aPizzaOrder.getPizzaCustomerName();
+
+        if (customerName == "Mike" || customerName == "mike" || customerName == "Diana" || customerName == "diana"){
+
+            discount = 2;
+
+        } else {
+            discount = 0;
+        }
         //return a discount if user is eligible
         //Task #3:  Figure out whether to return 0 or $2, depending on whether the customer's name is either Mike or Diana
 
@@ -211,6 +257,7 @@ public class PizzaTester
 
         //Task #4:  Calculate tax by multiplying tax_rate by parameter
 
+        tax = TAX_RATE * cost;
 
         return tax;
     }
