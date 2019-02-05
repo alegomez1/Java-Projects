@@ -212,6 +212,12 @@ public class PizzaTester
         else if (aPizzaOrder.getPizzaSize() == 16) {
             cost = 16.99;
         }
+        else {
+            //If the user does not pick one of the choices for size, I am telling them a 12 inch pizza will be made instead, and setting the size to 12 and the cost to 12.99
+            JOptionPane.showMessageDialog(null, "You did not pick one of the choices so a 12 inch pizza will be made");
+            aPizzaOrder.setPizzaSize(12);
+            cost = 12.99;
+        }
 
 
         // Finalize the total cost of the pizza:
