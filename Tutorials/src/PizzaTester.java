@@ -32,7 +32,9 @@ public class PizzaTester
 
 
     /**
-     * Add comments about the purpose of getUserInput() method
+     * The getUserInput() method creates different variables who's values change depending on what the user inputs.
+     * This is used to store the user's name, their preferred pizza size and pizza type, as well as what kind of toppings they would like.
+     * The only variables that are initialized are the booleans for the toppings which by default are set to false. If and when the user wants a topping their value becomes true.
      */
     public static void getUserInput()
     {
@@ -128,24 +130,20 @@ public class PizzaTester
         // Task #1:  Create an instance of aPizzaOrder by invoking the constructor, and passing it the values in firstName, pizzaSizeInInches, pizzaType, cheeseTopping, pepperoniTopping, sausageTopping, onionTopping, mushroomTopping.
         //           Hint:  Remember to use "new" to instantiate an object of aPizzaOrder
 
+
+        //Here I am creating an instance of aPizza order by invoking the constructor and passing it the values the user has given.
         aPizzaOrder = new Pizza(firstName, pizzaSizeInInches, pizzaType, cheeseTopping, pepperoniTopping, sausageTopping, onionTopping, mushroomTopping);
-
-
-
-
-
-
     }
 
-
     /**
-     * add comments about the purpose of calculatePizzaCost() and describe the value that this method returns
-     * @return
+     * This calculatePizzaCost() method is used to calculate exactly how much the pizza the user has selected will cost, based on their choice of toppings and size.
+     * It then returns the cost as a double variable
      */
     public static double calculatePizzaCost()
     {
 
 
+        //Here all the variables are being defined and initialized
         double cost = 12.99;            //cost of the pizza
 
         String toppings = "";          //list of toppings
@@ -154,6 +152,8 @@ public class PizzaTester
         final double TOPPING_PRICE = 1.25;
 
 
+        //These if and else if statements check to see what type of crust the user has selected by checking in with the .getHandThinDeep() method from the Pizza domain class
+
         if (aPizzaOrder.getHandThinDeep() == 'h'|| aPizzaOrder.getHandThinDeep() == 'H')
             crust = "Hand-Tossed";
         else if (aPizzaOrder.getHandThinDeep() == 't' || aPizzaOrder.getHandThinDeep() == 'T')
@@ -161,12 +161,20 @@ public class PizzaTester
         else if (aPizzaOrder.getHandThinDeep() == 'd' || aPizzaOrder.getHandThinDeep() == 'D')
             crust = "Deep-Pan";
 
+
+        //Task #2a: Determine how many more toppings and concatenate them to the toppings String variable, and add 1 to numberOfToppings for each topping:
+
+        /* These if statements use the getter functions from the Pizza domain class to check if the user has selected they would like that specific topping added
+
+        If they have, the numberOfToppings variable will increase by 1 to indicate an extra topping has been added. A string indicating the type of additional topping is also
+
+        added to the toppings String variable.
+        */
         if (aPizzaOrder.getCheeseTopping())
         {
             numberOfToppings += 1;
             toppings = toppings + "Additional Cheese ";
         }
-        //Task #2a: Determine how many more toppings and concatenate them to the toppings String variable, and add 1 to numberOfToppings for each topping:
 
         if (aPizzaOrder.getPepperoniTopping())
         {
@@ -195,6 +203,9 @@ public class PizzaTester
 
         //Task #2b:  Set the initial cost of the pizza based upon the size. Hint:  Use an if-statement (10inch = 10.99; 12inch = 12.99; 14inch = 14.99; 16inch = 16.99)
 
+        /* These if and else-if statements use the .getPizzaSize() method from the Pizza domain class to see what the user chose as the size they would like,
+         * and depending on the size, it sets the cost accordingly
+        */
         if (aPizzaOrder.getPizzaSize() == 10) {
             cost = 10.99;
         }
@@ -214,31 +225,38 @@ public class PizzaTester
 
 
         //Display the pizza order confirmation:
-        JOptionPane.showMessageDialog(null, "Your order is as follows: " + "\nOne " + aPizzaOrder.getPizzaSize() + " inch pizza \n" + crust + " crust " + toppings + ".");
+        JOptionPane.showMessageDialog(null, "Your order is as follows: "
+                + "\nOne " + aPizzaOrder.getPizzaSize() + " inch pizza \n" + crust + " crust " + toppings + ".");
 
         return cost;
 
     }
 
+
     /**
-     * add comments about what this method does, and what is the value that it returns.
-     * @return
+     * The checkForDiscount() method uses the .getPizzaCustomerName() method from the Pizza domain class to check what the customer's name is.
+     * If the customer's name is Mike or Diana/Diane, they get a discount of $2 which is stored in the discount variable, which then gets applied to the final cost in the main function.
      */
     public static double checkForDiscount()
     {
         double discount = 0;
 
+
+        //Retrieving the entered customer name and setting it equal to a String variable.
         String customerName = aPizzaOrder.getPizzaCustomerName();
 
-        if (customerName == "Mike" || customerName == "mike" || customerName == "Diana" || customerName == "diana"){
+        //Here I am using an if statement to check what the customers name is to see whether or not they will get a discount.
+        //Side note, I added both Diana and Diane, because here in the comments it says Diana but on the assignment page it says Diane so I'm using both just in case.
+        //I'm using an .equalsIgnoreCase() function to account for the user typing the name with an uppercase or lowercase 'M' or 'D'
 
+        if (customerName.equalsIgnoreCase("Mike") || customerName.equalsIgnoreCase("Diana") || customerName.equalsIgnoreCase("Diane")){
+            System.out.println("Discount applied"); //I used this to check whether or not the discount was being applied appropriately by printing this message in the console
             discount = 2;
 
         } else {
             discount = 0;
+            System.out.println("No discount applied"); //I used this to check whether or not the discount was being applied appropriately by printing this message in the console
         }
-        //return a discount if user is eligible
-        //Task #3:  Figure out whether to return 0 or $2, depending on whether the customer's name is either Mike or Diana
 
 
         return discount;
@@ -246,9 +264,8 @@ public class PizzaTester
 
 
     /**
-     * add comments about what this method does, what it receives as a parameter, and what value it returns.
-     * @param cost
-     * @return
+     * The calculateTax() method received the cost as a parameter and returns a double.
+     * The sales tax rate is set at 8% and this is multiplied by the parameter cost to set how much tax the user will pay.
      */
     public static double calculateTax(double cost)
     {
@@ -264,9 +281,9 @@ public class PizzaTester
 
 
     /**
-     * add comments about what this method does, what it receives as parameters.
-     * @param cost
-     * @param tax
+     * The displayFinalPrice() method receives the cost and tax double variables as parameters, and adds them to calculate what the total cost of the pizza is.
+     * An object called aFormat is created from the DecimalFormat class to set what format we want the final cost displayed in.
+     * A JOptionPane message box is then used to display to the user what the cost of their order is, the tax on it, the total cost,  and that it will be ready in 30 minutes.
      */
     public static void displayFinalPrice(double cost, double tax)
     {
@@ -274,6 +291,14 @@ public class PizzaTester
         //calculate and display tax and total cost
 
         DecimalFormat aFormat = new DecimalFormat("$##0.00");
+
+
+        double totalCost = cost + tax;
+
+        JOptionPane.showMessageDialog(null, "The cost of your order is: " + aFormat.format(cost)
+                + "\nThe tax is: " + aFormat.format(tax)
+                + "\nThe total cost of your order is: " + aFormat.format(totalCost)
+                + "\nYour order will be ready for pick-up in 30 minutes.");
 
         //Task #5:  Using JOptionPane, display "The cost of your order is: " (use the DecimalFormat object)
         //          "The tax is: " (use the DecimalFormat object)

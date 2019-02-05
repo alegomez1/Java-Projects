@@ -12,7 +12,7 @@ public class Pizza
 {
     private String pizzaCustomerName;
     private int pizzaSize;      // 10, 12, 14, or 16 inches in diameter
-    private char handThinDeep;  // 'H' or 'T' or 'D' for hand tossed, thin crust, or deep dish, respecitively
+    private char handThinDeep;  // 'H' or 'T' or 'D' for hand tossed, thin crust, or deep dish, respectively
     private boolean cheeseTopping;
     private boolean pepperoniTopping;
     private boolean sausageTopping;
