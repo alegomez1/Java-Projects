@@ -1,8 +1,10 @@
 import java.util.Scanner;
 public class Lab4b {
 
-// The method getMonth() is used to ask the user what month their birthday is in
-// It sets the user's response to a String variable and then returns that variable
+/*
+    The method getMonth() is used to ask the user what month their birthday is in
+    It sets the user's response to a String variable and then returns that variable
+ */
     public static String getMonth(){
 
         Scanner keyboard = new Scanner(System.in);
@@ -11,9 +13,11 @@ public class Lab4b {
         return month;
     }
 
-// This method findBirthStone() uses a String parameter that is evaluated in the switch function
-// Based on the users response, it sets a String variable called birthStone equal to the corresponding birth stone for that month
-// It then returns that birthStone variable
+/*
+    This method findBirthStone() uses a String parameter that is evaluated in the switch function
+    Based on the users response, it sets a String variable called birthStone equal to the corresponding birth stone for that month
+    It then returns that birthStone variable
+ */
 
     public static String findBirthStone(String month) {
 
@@ -36,7 +40,7 @@ public class Lab4b {
                 birthStone = "Emerald"; //green********
                 break;
             case "June":
-                birthStone = "Pearl or Alexandrite"; //white/light purple****
+                birthStone = "Pearl"; //white****
                 break;
             case "July":
                 birthStone = "Ruby"; //red********
@@ -48,29 +52,31 @@ public class Lab4b {
                 birthStone = "Sapphire"; //blue******
                 break;
             case "October":
-                birthStone = "Tourmaline or Opal"; //pink*****
+                birthStone = "Opal"; //pink*****
                 break;
             case "November":
-                birthStone = "Topaz or Citrine"; //orange*******
+                birthStone = "Topaz"; //orange*******
                 break;
             case "December":
-                birthStone = "Tanzanite, Zircon, or Turquoise"; //blue*******
+                birthStone = "Turquoise"; //blue*******
                 break;
                 // For default
             default:
                 birthStone = "You did not enter a month";
                 break;
         }
-        System.out.println("The birthstone for the month of " + month + " is " + birthStone);
         return birthStone;
     }
-// This method findStoneColor()
+/*
+    This method findStoneColor() takes a String parameter 'month' to be evaluated in the switch function
+    It also declares a String variable 'stoneColor' that is changed to equal the color of the birth stone, based on the case
+    It the returns the 'stoneColor' variable
+ */
     public static String findStoneColor(String month){
 
-        String birthMonth = month;
         String stoneColor;
 
-        switch (birthMonth){
+        switch (month){
 
             case "Garnet":
             case "Ruby":
@@ -79,12 +85,12 @@ public class Lab4b {
             case "Amethyst":
                 stoneColor = "Purple";
                 break;
-            case "Pearl or Alexandrite":
-                stoneColor = "Clear or Purple";
+            case "Pearl":
+                stoneColor = "White";
                 break;
             case "Aquamarine":
             case "Sapphire":
-            case "Tanzanite, Zircon, or Turquoise":
+            case "Turquoise":
                 stoneColor = "Blue";
                 break;
             case "Peridot":
@@ -94,70 +100,34 @@ public class Lab4b {
             case "Diamond":
                 stoneColor = "Clear";
                 break;
-            case "Tourmaline or Opal":
+            case "Opal":
                 stoneColor = "Pink";
                 break;
-            case "Topaz or Citrine":
+            case "Topaz":
                 stoneColor = "Orange";
                 break;
             default: stoneColor = "You did not enter a month";
         }
-        System.out.println("The color of " + birthMonth + " is " + stoneColor);
         return stoneColor;
     }
 
-
+/*
+    Here in main I am calling all three methods
+    The getMonth() method is set equal to a String variable called 'birthMonth'
+    This 'birthMonth' variable is then passed into the findBirthStone() method as a parameter
+    The findBirthStone() method is set equal to a String variable called 'typeOfStone'
+    This 'typeOfStone' variable is then passed into the findStoneColor() method as a parameter
+    Finally, it prints a sentence showing each individual value depending on what the user said their birth month is
+ */
     public static void main(String[] args) {
 
         String birthMonth = getMonth();
 
         String typeOfStone = findBirthStone(birthMonth);
 
-        findStoneColor((typeOfStone));
+        String stoneColor = findStoneColor((typeOfStone));
 
+        System.out.printf("You were born in %s and your birthstone is %s and the color of your birthstone is %s" , birthMonth, typeOfStone, stoneColor);
 
     }
 }
-
-
-  /*    public static String findStoneColor(String month){
-
-            String birthMonth = month;
-            String stoneColor = "";
-
-            switch (birthMonth){
-
-                case "January":
-                case "July":
-                    stoneColor = "Red";
-                    break;
-                case "February":
-                case "June":
-                    stoneColor = "Purple";
-                    break;
-                case "March":
-                case "September":
-                case "December":
-                    stoneColor = "Blue";
-                    break;
-                case "August":
-                case "May":
-                    stoneColor = "Green";
-                    break;
-                case "April":
-                    stoneColor = "Clear";
-                    break;
-                case "October":
-                    stoneColor = "Pink";
-                    break;
-                case "November":
-                    stoneColor = "Orange";
-                    break;
-                    default: stoneColor = "You did not enter a month";
-
-
-            }
-            System.out.println("The color of your stone for the month of " + birthMonth + " is " + stoneColor);
-            return stoneColor;
-
-        }*/
