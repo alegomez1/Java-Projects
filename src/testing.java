@@ -5,44 +5,46 @@ public class testing {
 
 
 
-    public static void calculateTip(){
+    static int sumOfEvens =0;
+    static int countOfEvens =0;
+    static int usersInput =0;
 
-        Scanner kb = new Scanner(System.in);
+    public static void processAllEvens(){
+        Scanner keyboard = new Scanner(System.in);
+        do
+        {
+            System.out.println("Please enter a number between 5-10");
+            usersInput = keyboard.nextInt();
+            if (usersInput>10 || usersInput<5){
+                System.out.println("Wrong, the number must be between 5-10");
 
-        System.out.println("How much was your check?");
-        double checkAmount = kb.nextDouble();
+            }
+        }while (usersInput>10 || usersInput<5);
 
-
-        System.out.println("How much would you like to tip?");
-        double tipAmount = kb.nextDouble();
-
-        if (tipAmount < 15) {
-            System.out.println("Stop being a cheapo and tip higher!");
-        }
-        else {
-
-         double newTipAmount = tipAmount/100;
-
-         double adjustedTip = checkAmount * newTipAmount;
-
-         double totalCheck = adjustedTip + checkAmount;
-
-         System.out.println("You're tip amount would be: $" + adjustedTip + " and that brings your total to: $" + totalCheck);
-
-
+        for (int i = 1; i<= usersInput; i++){
+            if (i%2==0){
+                sumOfEvens = sumOfEvens+i;
+                countOfEvens++;
+            }
         }
 
 
 
     }
 
+    public static void display(){
 
-    public static void main(String[] args) {
+        System.out.printf("There were %d even numbers between 1 and %d", countOfEvens, usersInput);
+    }
 
-    calculateTip();
+    public static void main(String[] args){
+        processAllEvens();
 
+        display();
 
     }
+
+
 
 
     }

@@ -19,90 +19,182 @@ public class DiceSimulation {
     static int fives = 0; // number of times double five is rolled
     static int sixes = 0; // number of times double six is rolled
 
+    //Here in main I am calling all three methods to run the program
     public static void main(String[] args)
     {
-
-        // instantiate the dice object
-        // Call each of the 3 looping METHODS HERE
-
         rollDiceAndTabulateWhile();
 
-        System.out.println("\nExecuted");
-    }
+        rollDiceAndTabulateDoWhile();
 
+        rollDiceAndTabulateFor();
+    }
+    /*
+    * This method is used to to roll the dice 10,000 times while using a while loop
+    * It creates an instance of the Dice class called myDice which is used to call methods from the Dice class
+    * At the start of the method I call the clearCounters() method in order to clear the values of the variables
+    * At the end I call the summarizeResults() method in order to display the values for each variable
+     */
     public static void rollDiceAndTabulateWhile()
     {
-        //Complete task 2 here:
-        //Call the clearCounters() method
-        Dice newDice = new Dice();
+        Dice myDice = new Dice();
         clearCounters();
 
-        while (count!=NUMBER){
-            newDice.rollDice();
-            newDice.getDie1();
-            newDice.getDie2();
 
-            if (newDice.getDie1() == 1 && newDice.getDie2() ==1){
+        // I set the while loop to run while count does not equal NUMBER so that once it reaches 10,000 times, it stops
+
+        while (count!=NUMBER){
+            myDice.rollDice();
+            //I declare these two variables equal to the getDie() methods from the Dice class so it's easier to read in the if/else-if statements
+           int die1 = myDice.getDie1();
+           int die2= myDice.getDie2();
+
+           //The if/else-if statements are set up so that if both variables have the same value, it will add 1 to the ones, twos, etc. variables, and also 1 to count
+            if (die1 == 1 && die2 ==1){
                 ones++;
                 count++;
             }
-            else if (newDice.getDie1() == 2 && newDice.getDie2() == 2){
+            else if (die1 == 2 && die2 == 2){
                 twos++;
                 count++;
             }
-            else if (newDice.getDie1() == 3 && newDice.getDie2() == 3){
+            else if (die1 == 3 && die2 == 3){
                 threes++;
                 count++;
             }
-            else if (newDice.getDie1() == 4 && newDice.getDie2() == 4){
+            else if (die1 == 4 && die2 == 4){
                 fours++;
                 count++;
             }
-            else if (newDice.getDie1() == 5 && newDice.getDie2() == 5){
+            else if (die1 == 5 && die2 == 5){
                 fives++;
                 count++;
             }
-            else if (newDice.getDie1() == 6 && newDice.getDie2() == 6){
+            else if (die1 == 6 && die2 == 6){
                 sixes++;
                 count++;
             }
-
+            //If the variables are not equal to each other, it simply adds 1 to the count so the loop does not run infinitely
             else {
                 count++;
             }
         }
-
+        System.out.println("\nThese results were made using a while loop\n" +
+                "**************************************");
         summarizeResults();
-
-        //Use a while loop to generate 10000 dice rolls
-        //Hint: call the rollDice() method inside the loop and check dice value using getters
-        //Call the summarizeResults() method
     }
 
+    /*
+    * This method is used to roll the dice 10,000 but using a do-while loop
+    * The clearCounters() method is called at the beginning in order to set the values of the variables back to 0
+    * I create a myDice object as an instance of the Dice() class in order to call its methods
+    * At the end I call the summarizeResults() method in order to display the values for each variable
+     */
     public static void rollDiceAndTabulateDoWhile()
     {
-        //Complete task 3 here:
-        //Call the clearCounters() method
+        clearCounters();
+        Dice myDice = new Dice();
+        do
+        {
+            myDice.rollDice();
+            //I declare these two variables equal to the getDie() methods from the Dice class so it's easier to read in the if/else-if statements
+            int die1 = myDice.getDie1();
+            int die2= myDice.getDie2();
 
-        //Use a Do-While loop to generate 10000 dice rolls
-        //Hint: call the rollDice() method inside the loop and check dice value using getters
-        //Call the summarizeResults() method
+            //The if/else-if statements are set up so that if both variables have the same value, it will add 1 to the ones, twos, etc. variables, and also 1 to count
+            if (die1 == 1 && die2 ==1){
+                ones++;
+                count++;
+            }
+            else if (die1 == 2 && die2 == 2){
+                twos++;
+                count++;
+            }
+            else if (die1 == 3 && die2 == 3){
+                threes++;
+                count++;
+            }
+            else if (die1 == 4 && die2 == 4){
+                fours++;
+                count++;
+            }
+            else if (die1 == 5 && die2 == 5){
+                fives++;
+                count++;
+            }
+            else if (die1 == 6 && die2 == 6){
+                sixes++;
+                count++;
+            }
+            else {
+                count++;
+            }
+            //Like the previous loop, I have it set to run while count is not equal to NUMBER so that it runs 10,000 times
+        } while (count!=NUMBER);
+
+        System.out.println("\nThese results were made using a do-while loop\n" +
+                "**************************************");
+        summarizeResults();
     }
 
+    /*
+    * This method is used to roll the dice 10,000 times but using a for loop instead
+    * The clearCounters() method is called at the beginning in order to set the values of the variables back to 0
+    * I create a myDice object as an instance of the Dice() class in order to call its methods
+    * At the end I call the summarizeResults() method in order to display the values for each variable
+     */
     public static void rollDiceAndTabulateFor()
     {
-        //Complete task 4 here:
-        //Call the clearCounters() method
+        clearCounters();
+        Dice myDice = new Dice();
 
-        //Use a for-loop to generate 10000 dice rolls
-        //Hint: call the rollDice() method inside the loop and check dice value using getters
-        //Call the summarizeResults() method
+        //I set i equal to 0 and have the loop run while i is less than NUMBER. Every time it runs it adds 1 to counter
+        for (int i = 0; i<NUMBER; i++){
+            myDice.rollDice();
+
+            //I declare these two variables equal to the getDie() methods from the Dice class so it's easier to read in the if/else-if statements
+            int die1 = myDice.getDie1();
+            int die2 = myDice.getDie2();
+
+            //The if/else-if statements are set up so that if both variables have the same value, it will add 1 to the ones, twos, etc. variables, and also 1 to count
+            if (die1 == 1 && die2 ==1){
+                ones++;
+                count++;
+            }
+            else if (die1 == 2 && die2 == 2){
+                twos++;
+                count++;
+            }
+            else if (die1 == 3 && die2 == 3){
+                threes++;
+                count++;
+            }
+            else if (die1 == 4 && die2 == 4){
+                fours++;
+                count++;
+            }
+            else if (die1 == 5 && die2 == 5){
+                fives++;
+                count++;
+            }
+            else if (die1 == 6 && die2 == 6){
+                sixes++;
+                count++;
+            }
+            else {
+                count++;
+            }
+
+        }
+        System.out.println("\nThese results were made using a for loop\n" +
+                "**************************************");
+        summarizeResults();
     }
 
+    /*
+    * This clearCounters() method is used to set all the values of the variables back to 0 so that when each loop method runs, they start anew at 0
+     */
     public static void clearCounters()
     {
-        //Complete task 5 here:
-        //reset all counters back to 0
         count = 0;
         ones = 0;
         twos = 0;
@@ -112,16 +204,19 @@ public class DiceSimulation {
         sixes = 0;
     }
 
+    /*
+    * This summarizeResults() method is used to print out how many times each double of the numbers was rolled
+     */
     public static void summarizeResults()
     {
-        //Complete task 6 here:
-        //Print out the value of all counters
-        System.out.printf("You rolled this many double ones: %d\n" +
+        System.out.printf("\nYou rolled this many double ones: %d\n" +
                 "You rolled this many double twos: %d\n" +
                 "You rolled this many double threes: %d\n" +
                 "You rolled this many double fours: %d\n" +
                 "You rolled this many double fives: %d\n" +
-                "You rolled this many double sixes: %d", ones, twos, threes, fours, fives, sixes);
+                "You rolled this many double sixes: %d\n", ones, twos, threes, fours, fives, sixes);
+
 
     }
 }
+
