@@ -38,7 +38,7 @@ public class MidtermPractice2 {
            if (userAnswer == correctAnswer){
                System.out.println("Correct!");
            }
-           else if (userAnswer != correctAnswer){
+           else {
                System.out.println("Wrong, try again");
                totalWrong += 1;
            }

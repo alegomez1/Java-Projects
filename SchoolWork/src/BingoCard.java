@@ -1,6 +1,8 @@
+import java.util.Random;
+
 public class BingoCard
 {
-    //These ints are initialized to random numbers between
+    //These are all of the instance variables that represent the spaces on the Bingo card
     private int bNum1;
     private int bNum2;
     private int bNum3;
@@ -31,8 +33,40 @@ public class BingoCard
     private int oNum4;
     private int oNum5;
 
+    //This is the constructor which simulates a Bingo card. Each instance variable is set to a random number between a certain range
     public BingoCard()
     {
+        Random myRan = new Random();
+
+        this.bNum1 = myRan.nextInt(15) + 1;
+        this.bNum2 = myRan.nextInt(15) + 1;
+        this.bNum3 = myRan.nextInt(15) + 1;
+        this.bNum4 = myRan.nextInt(15) + 1;
+        this.bNum5 = myRan.nextInt(15) + 1;
+
+        this.iNum1 = myRan.nextInt(15) + 16;
+        this.iNum2 = myRan.nextInt(15) + 16;
+        this.iNum3 = myRan.nextInt(15) + 16;
+        this.iNum4 = myRan.nextInt(15) + 16;
+        this.iNum5 = myRan.nextInt(15) + 16;
+
+        this.nNum1 = myRan.nextInt(15) + 31;
+        this.nNum2 = myRan.nextInt(15) + 31;
+        this.nNum3 = myRan.nextInt(15) + 31;
+        this.nNum4 = myRan.nextInt(15) + 31;
+        this.nNum5 = myRan.nextInt(15) + 31;
+
+        this.gNum1 = myRan.nextInt(15) + 46;
+        this.gNum2 = myRan.nextInt(15) + 46;
+        this.gNum3 = myRan.nextInt(15) + 46;
+        this.gNum4 = myRan.nextInt(15) + 46;
+        this.gNum5 = myRan.nextInt(15) + 46;
+
+        this.oNum1 = myRan.nextInt(15) + 61;
+        this.oNum2 = myRan.nextInt(15) + 61;
+        this.oNum3 = myRan.nextInt(15) + 61;
+        this.oNum4 = myRan.nextInt(15) + 61;
+        this.oNum5 = myRan.nextInt(15) + 61;
         //Constructor for a BingoCard
         //Generate a random number for each instance variable in the Bingo Card, using
         //the following range of numbers:
@@ -42,6 +76,7 @@ public class BingoCard
         // and "O" (numbers 61–75).
     }
 
+    //These are all the getter and setter methods
     public int getbNum1() {
         return bNum1;
     }
@@ -242,70 +277,51 @@ public class BingoCard
         this.oNum5 = oNum5;
     }
 
+    /*
+    *   This gotBingo() method is used to check whether or not the user won Bingo
+    *   It checks to see if all the numbers horizontally, diagonally, or vertically are equal to zero to indicate that the user scored Bingo
+    *   If so it returns true, otherwise it returns false
+     */
     public boolean gotBingo()
     {
-        //when a game is being played, if the letter and number match
-        //the letter and number called out, its value will be zeroed out
-        //to simulate placing a button on that location.
 
-        //to determine if the card has BINGO, one of the following conditions must be true:
-        //1. Vertical:  bNum1, bNum2, bNum3, bNum4, and bNum5 must all be 0's OR
-        //              iNum1, iNum2, iNum3, iNum4, and iNum5 must all be 0's OR
-        //              nNum1, nNum2, nNum3, nNum4, and nNum5 must all be 0's OR
-        //              gNum1, gNum2, gNum3, gNum4, and gNum5 must all be 0's OR
-        //              oNum1, oNum2, oNum3, oNum4, and oNum5 must all be 0's
+        if (    (bNum1==0 && bNum2==0 && bNum3==0 && bNum4==0 && bNum5==0) ||
+                (iNum1==0 && iNum2==0 && iNum3==0 && iNum4==0 && iNum5==0) ||
+                (nNum1==0 && nNum2==0 && nNum3==0 && nNum4==0 && nNum5==0) ||
+                (gNum1==0 && gNum2==0 && gNum3==0 && gNum4==0 && gNum5==0) ||
+                (oNum1==0 && oNum2==0 && oNum3==0 && oNum4==0 && oNum5==0))
+        {
+            return true;
+        }
+        else if (   (bNum1==0 && iNum1==0 && nNum1==0 && gNum1==0 && oNum1==0) ||
+                    (bNum2==0 && iNum2==0 && nNum2==0 && gNum2==0 && oNum2==0) ||
+                    (bNum3==0 && iNum3==0 && nNum3==0 && gNum3==0 && oNum3==0) ||
+                    (bNum4==0 && iNum4==0 && nNum4==0 && gNum4==0 && oNum4==0) ||
+                    (bNum5==0 && iNum5==0 && nNum5==0 && gNum5==0 && oNum5==0))
+        {
+            return true;
+        }
+        else if (   (bNum1==0 && iNum2==0 && nNum3==0 && gNum4==0 && oNum5==0) ||
+                    (bNum5==0 && iNum4==0 && nNum3==0 && gNum2==0 && oNum1==0))
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
 
-        //2.  Horizontal:  bNum1, iNum1, nNum1, gNum1, and oNum1 must all be 0's OR
-        //                 bNum2, iNum2, nNum2, gNum2, and oNum2 must all be 0's OR
-        //                 bNum3, iNum3, nNum3, gNum3, and oNum3 must all be 0's OR
-        //                 bNum4, iNum4, nNum4, gNum4, and oNum4 must all be 0's OR
-        //                 bNum5, iNum5, nNum5, gNum5, and oNum5 must all be 0's
-
-        //3.  Diagonal:    bNum1, iNum2, nNum3, gNum4, and oNum5 must all be 0's OR
-        //                 bNum5, iNum4, nNum3, gNum2, and oNum1 must all be 0's
-
-        //When any of the above 12 conditions are true, return true.  Otherwise, return false;
-
-        return false;
     }
 
+    //This is the toString() method meant to display the values of each variable in a way that mimics a real Bingo card
     public String toString()
     {
 
-        return "BingoCard{" +
-                "bNum1=" + bNum1 +
-                ", bNum2=" + bNum2 +
-                ", bNum3=" + bNum3 +
-                ", bNum4=" + bNum4 +
-                ", bNum5=" + bNum5 +
-                ", iNum1=" + iNum1 +
-                ", iNum2=" + iNum2 +
-                ", iNum3=" + iNum3 +
-                ", iNum4=" + iNum4 +
-                ", iNum5=" + iNum5 +
-                ", nNum1=" + nNum1 +
-                ", nNum2=" + nNum2 +
-                ", nNum3=" + nNum3 +
-                ", nNum4=" + nNum4 +
-                ", nNum5=" + nNum5 +
-                ", gNum1=" + gNum1 +
-                ", gNum2=" + gNum2 +
-                ", gNum3=" + gNum3 +
-                ", gNum4=" + gNum4 +
-                ", gNum5=" + gNum5 +
-                ", oNum1=" + oNum1 +
-                ", oNum2=" + oNum2 +
-                ", oNum3=" + oNum3 +
-                ", oNum4=" + oNum4 +
-                ", oNum5=" + oNum5 +
-                '}';
+        return "BingoCard:\n" + bNum1 + "  " + bNum2 + "  " + bNum3 + "  " + bNum4 + "  " + bNum5 + "  \n" +
+                iNum1 + "  " + iNum2 + "  " + iNum3 + "  " + iNum4 + "  " + iNum5 + "  \n" +
+                nNum1 + "  " + nNum2 + "  " + nNum3 + "  " + nNum4 + "  " + nNum5 + "  \n" +
+                gNum1 + "  " + gNum2 + "  " + gNum3 + "  " + gNum4 + "  " + gNum5 + "  \n" +
+                oNum1 + "  " + oNum2 + "  " + oNum3 + "  " + oNum4 + "  " + oNum5 + "  \n";
 
-        //1.  Print the content of the Bingo Card, ensuring the display is formatted as follows:
-        //    bNum1  iNum1  nNum1  gNum1  oNum1
-        //    bNum2  iNum2  nNum2  gNum2  oNum2
-        //    bNum3  iNum3  nNum3  gNum3  oNum3
-        //    bNum4  iNum4  nNum4  gNum4  oNum4
-        //    bNum5  iNum5  nNum5  gNum5  oNum5
     }
 
 
