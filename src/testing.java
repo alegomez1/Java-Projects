@@ -154,11 +154,163 @@ public class testing {
             else if (userInput[i] == 'G' || userInput[i] == 'g'){
                 enryptedWord += "AABBA ";
             }
+            //************************************Work edits start here*******************************************
+            else if (userInput[i] == 'H' || userInput[i] == 'h'){
+                enryptedWord += "AABBB ";
+            }
+            else if (userInput[i] == 'I' || userInput[i] == 'i' || userInput[i] == 'J' || userInput[i] == 'j') {
+                enryptedWord += "ABAAA ";
+            }
+            else if (userInput[i] == 'K' || userInput[i] == 'k'){
+                enryptedWord += "ABAAB ";
+            }
+            else if (userInput[i] == 'L' || userInput[i] == 'l'){
+                enryptedWord += "ABABA ";
+            }
+            else if (userInput[i] == 'M' || userInput[i] == 'm'){
+                enryptedWord += "ABABB ";
+            }
+            else if (userInput[i] == 'N' || userInput[i] == 'n'){
+                enryptedWord += "ABBAA ";
+            }
+            else if (userInput[i] == 'O' || userInput[i] == 'o'){
+                enryptedWord += "ABBAB ";
+            }
+            else if (userInput[i] == 'P' || userInput[i] == 'p'){
+                enryptedWord += "ABBBA ";
+            }
+            else if (userInput[i] == 'Q' || userInput[i] == 'q'){
+                enryptedWord += "ABBBB ";
+            }
+            else if (userInput[i] == 'R' || userInput[i] == 'r'){
+                enryptedWord += "BAAAA ";
+            }
+            else if (userInput[i] == 'S' || userInput[i] == 's'){
+                enryptedWord += "BAAAB ";
+            }
+            else if (userInput[i] == 'T' || userInput[i] == 't'){
+                enryptedWord += "BAABA ";
+            }
+            else if (userInput[i] == 'U' || userInput[i] == 'u' || userInput[i] == 'V' || userInput[i] == 'v') {
+                enryptedWord += "BAABB ";
+            }
+            else if (userInput[i] == 'W' || userInput[i] == 'w'){
+                enryptedWord += "BABAA ";
+            }
+            else if (userInput[i] == 'X' || userInput[i] == 'x'){
+                enryptedWord += "BABAB ";
+            }
+            else if (userInput[i] == 'Y' || userInput[i] == 'y'){
+                enryptedWord += "BABBA ";
+            }
+            else if (userInput[i] == 'Z' || userInput[i] == 'z'){
+                enryptedWord += "BABBB ";
+            }
+            
+           
         }
 
         System.out.println(enryptedWord);
 
     }
+    
+    public static void decipherMethod(){
+        int wordsToDecipher = 0;
+        String phrase = "";
+        
+        System.out.println("How many codes do you want to decipher?\n
+                          + e.g.: ABBBA AABBA equals two codes");
+                           
+        wordsToDecipher = kb.nextInt();
+                           
+        //for loop that runs wordsToDecipher times
+                           
+        for(int i = wordsToDecipher; i>0; i--) {
+            System.out.println("Enter code");
+            String userInput = kb.nextLine();
+            
+            if(userInput == "/"){
+             wordsToDecipher += "/";   
+            }
+            else if(userInput == "AAAAA"){
+             wordsToDecipher += "A";
+            }
+            else if(userInput == "AAAAB"){
+             wordsToDecipher += "B";
+            }
+            else if(userInput == "AAABA"){
+             wordsToDecipher += "C";
+            }                    
+            else if(userInput == "AAABB"){
+             wordsToDecipher += "D";
+            }
+            else if(userInput == "AABAA"){
+             wordsToDecipher += "E";
+            }                    
+            else if(userInput == "AABAB"){
+             wordsToDecipher += "F";
+            }                    
+            else if(userInput == "AABBA"){
+             wordsToDecipher += "G";
+            }                    
+            else if(userInput == "AABBB"){
+             wordsToDecipher += "H";
+            }    
+                    //DOUBLE I AND J
+            else if(userInput == 'ABAAA"){
+             wordsToDecipher += "I|J";
+            }                    
+            else if(userInput == "ABAAB"){
+             wordsToDecipher += "K";
+            }                    
+            else if(userInput == "ABABA"){
+             wordsToDecipher += "L";
+            }                    
+            else if(userInput == "ABABB"){
+             wordsToDecipher += "M";
+            }  
+            else if(userInput == "ABBAA"){
+             wordsToDecipher += "N";
+            }                     
+            else if(userInput == "ABBAB"){
+             wordsToDecipher += "O";
+            }                     
+            else if(userInput == "ABBBA"){
+             wordsToDecipher += "P";
+            }                     
+            else if(userInput == "ABBBB"){
+             wordsToDecipher += "Q";
+            }                     
+            else if(userInput == "BAAAA"){
+             wordsToDecipher += "R";
+            }                     
+            else if(userInput == "BAAAB"){
+             wordsToDecipher += "S";
+            }                     
+            else if(userInput == "BAABA"){
+             wordsToDecipher += "T";
+            }                  
+                    //DOUBLE U AND V
+            else if(userInput == "BAABB"){
+             wordsToDecipher += "U|V";
+            }                    
+            else if(userInput == "BABAA"){
+             wordsToDecipher += "W";
+            }                    
+            else if(userInput == "BABAB"){
+             wordsToDecipher += "X";
+            }                           
+            else if(userInput == "BABBA"){
+             wordsToDecipher += "Y";
+            }                    
+            else if(userInput == "BABBB"){
+             wordsToDecipher += "Z";
+            }                    
+                    
+                    
+        }//end for loop
+        
+    }//end decipher method
 
 
 
