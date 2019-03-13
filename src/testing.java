@@ -218,8 +218,8 @@ public class testing {
         int wordsToDecipher = 0;
         String phrase = "";
         
-        System.out.println("How many codes do you want to decipher?\n
-                          + e.g.: ABBBA AABBA equals two codes");
+        System.out.println("How many codes do you want to decipher?\n"
+                          + "e.g.: ABBBA AABBA equals two codes");
                            
         wordsToDecipher = kb.nextInt();
                            
@@ -230,81 +230,81 @@ public class testing {
             String userInput = kb.nextLine();
             
             if(userInput == "/"){
-             wordsToDecipher += "/";   
+             phrase += "/";   
             }
             else if(userInput == "AAAAA"){
-             wordsToDecipher += "A";
+             phrase += "A";
             }
             else if(userInput == "AAAAB"){
-             wordsToDecipher += "B";
+             phrase += "B";
             }
             else if(userInput == "AAABA"){
-             wordsToDecipher += "C";
+             phrase += "C";
             }                    
             else if(userInput == "AAABB"){
-             wordsToDecipher += "D";
+             phrase += "D";
             }
             else if(userInput == "AABAA"){
-             wordsToDecipher += "E";
+             phrase += "E";
             }                    
             else if(userInput == "AABAB"){
-             wordsToDecipher += "F";
+             phrase += "F";
             }                    
             else if(userInput == "AABBA"){
-             wordsToDecipher += "G";
+             phrase += "G";
             }                    
             else if(userInput == "AABBB"){
-             wordsToDecipher += "H";
+             phrase += "H";
             }    
                     //DOUBLE I AND J
             else if(userInput == 'ABAAA"){
-             wordsToDecipher += "I|J";
+             phrase += "I|J";
             }                    
             else if(userInput == "ABAAB"){
-             wordsToDecipher += "K";
+             phrase += "K";
             }                    
             else if(userInput == "ABABA"){
-             wordsToDecipher += "L";
+             phrase += "L";
             }                    
             else if(userInput == "ABABB"){
-             wordsToDecipher += "M";
+             phrase += "M";
             }  
             else if(userInput == "ABBAA"){
-             wordsToDecipher += "N";
+             phrase += "N";
             }                     
             else if(userInput == "ABBAB"){
-             wordsToDecipher += "O";
+             phrase += "O";
             }                     
             else if(userInput == "ABBBA"){
-             wordsToDecipher += "P";
+             phrase += "P";
             }                     
             else if(userInput == "ABBBB"){
-             wordsToDecipher += "Q";
+             phrase += "Q";
             }                     
             else if(userInput == "BAAAA"){
-             wordsToDecipher += "R";
+             phrase += "R";
             }                     
             else if(userInput == "BAAAB"){
-             wordsToDecipher += "S";
+             phrase += "S";
             }                     
             else if(userInput == "BAABA"){
-             wordsToDecipher += "T";
+             phrase += "T";
             }                  
                     //DOUBLE U AND V
             else if(userInput == "BAABB"){
-             wordsToDecipher += "U|V";
+             phrase += "U|V";
             }                    
             else if(userInput == "BABAA"){
-             wordsToDecipher += "W";
+             phrase += "W";
             }                    
             else if(userInput == "BABAB"){
-             wordsToDecipher += "X";
+             phrase += "X";
             }                           
             else if(userInput == "BABBA"){
-             wordsToDecipher += "Y";
+             phrase += "Y";
             }                    
             else if(userInput == "BABBB"){
-             wordsToDecipher += "Z";
+             phrase += "Z";
             }                    
                     
                     
