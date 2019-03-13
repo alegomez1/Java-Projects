@@ -3,7 +3,7 @@ public class testingPartTwo {
 
     public static void main(String[] args) {
 
-        System.out.println(jaro("Lisa", "Liza"));
+        System.out.println(jaro("Melanie", "Liza"));
 
     }
 

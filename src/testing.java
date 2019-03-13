@@ -9,7 +9,8 @@ public class testing {
 
     public static void main(String[] args) {
 
-        a99BottlesOfBeer();
+        baconCipher();
+
 
     }
 
@@ -111,6 +112,56 @@ public class testing {
             }
         }
     }
+
+    public static void AplusB(int firstNumber, int secondNumber){
+        if ((firstNumber >= -1000 && secondNumber >=-1000) && (firstNumber <= 1000 && secondNumber <= 1000) ){
+            int sum = firstNumber + secondNumber;
+            System.out.println(sum);
+        } else
+            System.out.println("Those numbers are out of the range");
+
+    }
+
+    public static void baconCipher(){
+        System.out.println("Welcome to the Bacon cipher!\n");
+        System.out.println("Please enter a word or phrase to be encrypted");
+        char[] userInput = kb.nextLine().toCharArray();
+        String enryptedWord = "";
+
+
+        for (int i = 0; i<userInput.length; i++){
+            if (userInput[i] == 'A' || userInput[i] == 'a'){
+                enryptedWord += "AAAAA ";
+            }
+            else if (userInput[i] == ' '){
+                enryptedWord += "/ ";
+            }
+            else if (userInput[i] == 'B' || userInput[i] == 'b'){
+                enryptedWord += "AAAAB ";
+            }
+            else if (userInput[i] == 'C' || userInput[i] == 'c'){
+                enryptedWord += "AAABA ";
+            }
+            else if (userInput[i] == 'D' || userInput[i] == 'd'){
+                enryptedWord += "AAABB ";
+            }
+            else if (userInput[i] == 'E' || userInput[i] == 'e'){
+                enryptedWord += "AABAA ";
+            }
+            else if (userInput[i] == 'F' || userInput[i] == 'f'){
+                enryptedWord += "AABAB ";
+            }
+            else if (userInput[i] == 'G' || userInput[i] == 'g'){
+                enryptedWord += "AABBA ";
+            }
+        }
+
+        System.out.println(enryptedWord);
+
+    }
+
+
+
 
 }
 
