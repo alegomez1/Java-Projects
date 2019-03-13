@@ -1,16 +1,22 @@
-public class tuna {
+import java.awt.FlowLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+public class tuna extends JFrame {
 
-    private String first;
-    private String last;
-    private static int members = 0;
 
-    public tuna(String fn, String ln){
-        first = fn;
-        last = ln;
-        members++;
-        System.out.printf("Constructor for %s %s, members in the club: %d\n", first, last, members);
+    private JLabel item1;
+
+    public tuna(){
+        //super is the title of the window
+        super("The title bar");
+        //Default layout
+        setLayout(new FlowLayout());
+
+        //Text on the screen
+        item1 = new JLabel("This is a sentence");
+        item1.setToolTipText("This is going to show up on hover");
+        add(item1);
+
+
     }
-
-
-
 }

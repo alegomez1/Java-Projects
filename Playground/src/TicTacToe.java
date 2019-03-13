@@ -6,7 +6,9 @@ public class TicTacToe {
         for (int i = 0; i<10; i++){
             tac.showBoard();
             tac.playGame();
+            tac.checkWinner();
             tac.computerPlay();
+            tac.checkWinner();
         }
 
 

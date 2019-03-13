@@ -1,13 +1,10 @@
-import java.util.EnumSet;
-
+import javax.swing.JFrame;
 public class apples {
 
     public static void main(String[] args) {
-
-        tuna member1 = new tuna("Megan", "Fox");
-        tuna member2 = new tuna("Natalie", "Portman");
-        tuna member3 = new tuna("Taylor", "Swift");
-
+        tuna bucky = new tuna();
+        bucky.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        bucky.setSize(275, 180);
+//        bucky.setVisible(true);
     }
-
 }

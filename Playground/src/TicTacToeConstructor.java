@@ -19,7 +19,7 @@ public class TicTacToeConstructor {
 
     private boolean gameOver = false;
 
-    String[][] board = { {".",".","."} , {".",".","."}, {".",".","."}};
+    String[][] board = { {"-","-","-"} , {"-","-","-"}, {"-","-","-"}};
 
     public TicTacToeConstructor(){
 
@@ -250,6 +250,40 @@ public class TicTacToeConstructor {
 
     public void checkWinner(){
 
+        //checking A's across
+        if( (a1.equals("x") && a2.equals("x") && a3.equals("x")) || (a1.equals("o") && a2.equals("o") && a3.equals("o"))) {
+            System.out.println("Winner");
+        }
+        //checking 1 down
+        if( (a1.equals("x") && b1.equals("x")&& c1.equals("x") ) || (a1.equals("o") && b1.equals("o")&& c1.equals("o") )) {
+            System.out.println("Winner");
+        }
+        //checking B's across
+        if( (b1.equals("x") && b2.equals("x") && b3.equals("x")) || (b1.equals("o") && b2.equals("o") && b3.equals("o"))) {
+            System.out.println("Winner");
+        }
+        //checking 2 down
+        if( (a2.equals("x") && b2.equals("x")&& c2.equals("x") ) || (a2.equals("o") && b2.equals("o")&& c2.equals("o") )) {
+            System.out.println("Winner");
+        }
+
+        //checking C's across
+        if( (c1.equals("x") && c2.equals("x") && c3.equals("x")) || (c1.equals("o") && c2.equals("o") && c3.equals("o"))) {
+            System.out.println("Winner");
+        }
+
+        //checking 3 down
+        if( (a3.equals("x") && b3.equals("x")&& c3.equals("x") ) || (a3.equals("o") && b3.equals("o")&& c3.equals("o") )) {
+            System.out.println("Winner");
+        }
+        //checking right diagonal A1 B2 C3
+        if( (a1.equals("x") && b2.equals("x") && c3.equals("x") ) || (a1.equals("o") && b2.equals("o") && c3.equals("o") ) ) {
+            System.out.println("Winner");
+        }
+        //checking other diagonal C1 B2 A3
+        if( (c1.equals("x") && b2.equals("x") && a3.equals("x") ) || (c1.equals("o") && b2.equals("o") && a3.equals("o") ) ) {
+            System.out.println("Winner");
+        }
 
     }
 
@@ -257,8 +291,9 @@ public class TicTacToeConstructor {
 
 
     public void showBoard(){
-        System.out.printf("\n%s   %s   %s\n" +
-                          "%s   %s   %s\n" +
-                          "%s   %s   %s", a1, a2, a3, b1, b2, b3, c1, c2, c3);
+        System.out.printf("\n     1   2   3\n" +
+                          "A:   %s   %s   %s\n" +
+                          "B:   %s   %s   %s\n" +
+                          "C:   %s   %s   %s\n", a1, a2, a3, b1, b2, b3, c1, c2, c3);
     }
 }
