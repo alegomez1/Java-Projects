@@ -10,6 +10,7 @@ public class testing {
     public static void main(String[] args) {
 
         baconCipher();
+        decipherMethod();
 
 
     }
@@ -216,99 +217,103 @@ public class testing {
     
     public static void decipherMethod(){
         int wordsToDecipher = 0;
-        String phrase = "";
+
         
         System.out.println("How many codes do you want to decipher?\n"
                           + "e.g.: ABBBA AABBA equals two codes");
                            
         wordsToDecipher = kb.nextInt();
+        int spaces = wordsToDecipher -1;
+        char[] phrase = new char[wordsToDecipher + spaces];
                            
         //for loop that runs wordsToDecipher times
                            
-        for(int i = wordsToDecipher; i>0; i--) {
+        for(int i = 0; i<wordsToDecipher; i++) {
             System.out.println("Enter code");
             String userInput = kb.nextLine();
             
             if(userInput == "/"){
-             phrase += "/";   
+             phrase[i] = ' ';
             }
             else if(userInput == "AAAAA"){
-             phrase += "A";
+             phrase[i] = 'A';
             }
             else if(userInput == "AAAAB"){
-             phrase += "B";
+                phrase[i] = 'B';
             }
             else if(userInput == "AAABA"){
-             phrase += "C";
+                phrase[i] = 'C';
             }                    
             else if(userInput == "AAABB"){
-             phrase += "D";
+                phrase[i] = 'D';
             }
             else if(userInput == "AABAA"){
-             phrase += "E";
+                phrase[i] = 'E';
             }                    
             else if(userInput == "AABAB"){
-             phrase += "F";
+                phrase[i] = 'F';
             }                    
             else if(userInput == "AABBA"){
-             phrase += "G";
+             phrase[i] = 'G';
             }                    
             else if(userInput == "AABBB"){
-             phrase += "H";
+             phrase[i] = 'H';
             }    
                     //DOUBLE I AND J
-            else if(userInput == 'ABAAA"){
-             phrase += "I|J";
+            else if(userInput == "ABAAA"){
+             phrase[i] = 'I';
             }                    
             else if(userInput == "ABAAB"){
-             phrase += "K";
+             phrase[i] = 'K';
             }                    
             else if(userInput == "ABABA"){
-             phrase += "L";
+             phrase[i] = 'L';
             }                    
             else if(userInput == "ABABB"){
-             phrase += "M";
+             phrase[i] = 'M';
             }  
             else if(userInput == "ABBAA"){
-             phrase += "N";
+             phrase[i] = 'N';
             }                     
             else if(userInput == "ABBAB"){
-             phrase += "O";
+             phrase[i] = 'O';
             }                     
             else if(userInput == "ABBBA"){
-             phrase += "P";
+             phrase[i] = 'P';
             }                     
             else if(userInput == "ABBBB"){
-             phrase += "Q";
+             phrase[i] = 'Q';
             }                     
             else if(userInput == "BAAAA"){
-             phrase += "R";
+             phrase[i] = 'R';
             }                     
             else if(userInput == "BAAAB"){
-             phrase += "S";
+             phrase[i] = 'S';
             }                     
             else if(userInput == "BAABA"){
-             phrase += "T";
+             phrase[i] = 'T';
             }                  
                     //DOUBLE U AND V
             else if(userInput == "BAABB"){
-             phrase += "U|V";
+             phrase[i] = 'U';
             }                    
             else if(userInput == "BABAA"){
-             phrase += "W";
+             phrase[i] = 'W';
             }                    
             else if(userInput == "BABAB"){
-             phrase += "X";
+             phrase[i] = 'X';
             }                           
             else if(userInput == "BABBA"){
-             phrase += "Y";
+             phrase[i] = 'Y';
             }                    
             else if(userInput == "BABBB"){
-             phrase += "Z";
+             phrase[i] = 'Z';
             }                    
                     
                     
         }//end for loop
+        System.out.println(phrase);
+        System.out.println("test");
         
     }//end decipher method
 
