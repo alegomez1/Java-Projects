@@ -9,8 +9,8 @@ public class testing {
 
     public static void main(String[] args) {
 
-        baconCipher();
-        decipherMethod();
+
+        sentenceCounter();
 
 
     }
@@ -67,33 +67,21 @@ public class testing {
     }
 
     public static void sentenceCounter(){
-
         int letterCounter=0;
+        int spaceCounter=0;
         int numberCounter=0;
-        int spaceCounter =0;
-        int otherCounter =0;
+        int otherCounter=0;
 
-        System.out.println("Please enter a sentence");
-        char[] sentenceArray = kb.nextLine().toCharArray();
-
-        for (int i = 0; i < sentenceArray.length; i++){
-
-            if (Character.isDigit(sentenceArray[i])){
-                numberCounter ++;
-
-            }
-            else if (Character.isSpaceChar(sentenceArray[i])){
-                spaceCounter++;
-            }
-            else if (Character.isLetter(sentenceArray[i])){
-                letterCounter++;
-            }else otherCounter++;
+        System.out.println("Enter a sentece with numbers, spaces, letters, and weird characters");
+        char[] sentence = kb.nextLine().toCharArray();
+        for (int i=0; i<sentence.length; i++){
+            if (Character.isLetter(sentence[i])) letterCounter++;
+            else if (Character.isDigit(sentence[i])) numberCounter++;
+            else if (Character.isSpaceChar(sentence[i])) spaceCounter++;
+            else otherCounter++;
         }
 
-        System.out.printf("Letters: %d\n" +
-                "Numbers: %d\n" +
-                "Spaces %d\n" +
-                "Other: %d\n", letterCounter, numberCounter, spaceCounter, otherCounter);
+        System.out.printf("Letters: %d\nNumbers: %d\nSpaces: %d\nOther: %d",letterCounter,numberCounter,spaceCounter,otherCounter);
     }
 
     public static void a99BottlesOfBeer() {
@@ -316,6 +304,8 @@ public class testing {
         System.out.println("test");
         
     }//end decipher method
+
+
 
 
 
