@@ -19,12 +19,15 @@ public class StringMethods {
         System.out.println(str3.isEmpty()); //returns boolean if empty or not
         System.out.println(str4.isEmpty()); //returns boolean if empty or not
 
+        String[] strCount = str5.split("\\s+");
+
         System.out.println(str1.concat(" ").concat(str2)); //Joins Strings together
         System.out.println(str1.replace('l', 'y')); //replaces one char with another
         System.out.println(str6.trim()); //trims white space
         System.out.println(String.valueOf(totalPoints)); //Parse int to String
         System.out.println(str1.toUpperCase()); //All text to uppercase
         System.out.println(str1.toLowerCase()); //All text to lowercase
+        System.out.println(strCount);
 
 
     }

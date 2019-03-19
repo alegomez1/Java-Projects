@@ -1,9 +1,11 @@
 import java.util.Scanner;
 public class testingPartTwo {
 
+    static Scanner kb = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        System.out.println(jaro("Melanie", "Liza"));
+        replaceAs();
 
     }
 
@@ -49,6 +51,15 @@ public class testingPartTwo {
                 ((double)matches / tLength) +
                 (((double)matches - transpositions/2.0) / matches)) / 3.0;
 
+
+    }
+
+    public static void replaceAs(){
+        System.out.println("Enter a word or phrase");
+
+        String userInput = kb.nextLine();
+
+        System.out.println(userInput.replace('a', 'x'));
 
     }
 

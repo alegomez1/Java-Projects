@@ -32,7 +32,7 @@ public class JellyBeanTester
             String secondUserInputJBColor;
             String secondUserInputJBFlavor;
 
-            String thirdtUserInputJBColor;
+            String thirdUserInputJBColor;
             String thirdUserInputJBFlavor;
 
             Scanner keyboard = new Scanner(System.in);
@@ -50,15 +50,15 @@ public class JellyBeanTester
             jb2 = new JellyBean(secondUserInputJBFlavor, secondUserInputJBColor);
 
             System.out.println("What is the color of the third jelly bean?");
-            thirdtUserInputJBColor = keyboard.nextLine();
+            thirdUserInputJBColor = keyboard.nextLine();
             System.out.println("What is the flavor of the third jelly bean?");
             thirdUserInputJBFlavor = keyboard.nextLine();
-            jb3 = new JellyBean(thirdUserInputJBFlavor, thirdtUserInputJBColor);
+            jb3 = new JellyBean(thirdUserInputJBFlavor, thirdUserInputJBColor);
         }
 
 
         /**
-         *  The processJellyBeanBag() method will check how many JellyBean objects have the color of orange,
+         *  The processJellyBeanBag() method will check how many JellyBean objects have the flavor of orange,
          *  and will change each of the orange JellyBeans' eatMe attribute to true. The processJellyBeanBag() method will also
          *  count how many JellyBeans are orange in color, and will display that count at the end of the method.
          *  It will also display the content of each of the 3 JellyBean objects.
@@ -67,17 +67,17 @@ public class JellyBeanTester
         {
             int orangeJellyBeanCounter = 0;
 
-            if (jb1.getColor().equalsIgnoreCase("orange")){
+            if (jb1.getFlavor().equalsIgnoreCase("orange")){
                 orangeJellyBeanCounter ++;
                 jb1.setEatMe(true);
             }
 
-            if (jb2.getColor().equalsIgnoreCase("orange")){
+            if (jb2.getFlavor().equalsIgnoreCase("orange")){
                 orangeJellyBeanCounter ++;
                 jb2.setEatMe(true);
             }
 
-            if (jb3.getColor().equalsIgnoreCase("orange")){
+            if (jb3.getFlavor().equalsIgnoreCase("orange")){
                 orangeJellyBeanCounter ++;
                 jb3.setEatMe(true);
             }

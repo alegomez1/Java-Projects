@@ -6,35 +6,41 @@ public class MoreTesting {
 
     public static void main(String[] args){
 
+      stringTester();
+
+    }
+
+    public static void piHelper(){
         Scanner kb = new Scanner(System.in);
 
+        int number = 0;
 
-        int x;
+        String pi = "3.1415926535897932384626433832795028841971";
+        char[] piArray = pi.toCharArray();
 
-        System.out.println("Please enter a number");
+        System.out.println("Print how many digits you know of pi");
+        char[] userInput = kb.nextLine().toCharArray();
 
-        x = kb.nextInt();
+        for (int i=0; i<userInput.length; i++){
 
+            if (userInput[i] == piArray[i]){
+                number=i-1;
+            }
 
-        switch(x){
+            else if (userInput[i] != piArray[i]){
+                System.out.printf("Wrong! %s should be %s", userInput[i], piArray[i]);
+                number = i-1;
 
-            case 0:
-                System.out.println("Looks like you picked zero");
-                break;
+            }
 
-            case 5:
-                System.out.println("It's five");
-                break;
-
-            case 7: case 8: case 9:
-                System.out.println("Are you trying to make a joke here?");
-                break;
-
-            default:
-                System.out.println("You need a number");
         }
 
+        System.out.println("You know pi to: " + number + " decimal places");
 
+
+    }
+
+    public static void stringTester(){
 
     }
 }
