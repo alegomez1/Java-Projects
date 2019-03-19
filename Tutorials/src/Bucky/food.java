@@ -1,3 +1,5 @@
+package Bucky;
+
 public class food {
 
     public void eat(){

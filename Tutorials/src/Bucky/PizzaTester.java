@@ -1,3 +1,5 @@
+package Bucky;
+
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -43,7 +45,7 @@ public class PizzaTester
         boolean mushroomTopping = false;
 
         //welcome message
-        JOptionPane.showMessageDialog(null, "Welcome to Mike and Diane's Pizza.");
+        JOptionPane.showMessageDialog(null, "Welcome to Mike and Diane's Bucky.Pizza.");
 
 
         //get user's first name
@@ -51,7 +53,7 @@ public class PizzaTester
 
 
         //prompt user and get pizza size choice
-        JOptionPane.showMessageDialog(null, "Pizza Size (inches) Cost"+
+        JOptionPane.showMessageDialog(null, "Bucky.Pizza Size (inches) Cost"+
                 '\n'+ "10' $10.99"+
                 '\n'+ "12' $12.99"+
                 '\n'+ "14' $14.99"+
@@ -146,7 +148,7 @@ public class PizzaTester
         final double TOPPING_PRICE = 1.25;
 
 
-        //These if and else if statements check to see what type of crust the user has selected by checking in with the .getHandThinDeep() method from the Pizza domain class
+        //These if and else if statements check to see what type of crust the user has selected by checking in with the .getHandThinDeep() method from the Bucky.Pizza domain class
 
         if (aPizzaOrder.getHandThinDeep() == 'h'|| aPizzaOrder.getHandThinDeep() == 'H')
             crust = "Hand-Tossed";
@@ -158,7 +160,7 @@ public class PizzaTester
 
         //Task #2a: Determine how many more toppings and concatenate them to the toppings String variable, and add 1 to numberOfToppings for each topping:
 
-        /* These if statements use the getter functions from the Pizza domain class to check if the user has selected they would like that specific topping added
+        /* These if statements use the getter functions from the Bucky.Pizza domain class to check if the user has selected they would like that specific topping added
 
         If they have, the numberOfToppings variable will increase by 1 to indicate an extra topping has been added. A string indicating the type of additional topping is also
 
@@ -197,7 +199,7 @@ public class PizzaTester
 
         //Task #2b:  Set the initial cost of the pizza based upon the size. Hint:  Use an if-statement (10inch = 10.99; 12inch = 12.99; 14inch = 14.99; 16inch = 16.99)
 
-        /* These if and else-if statements use the .getPizzaSize() method from the Pizza domain class to see what the user chose as the size they would like,
+        /* These if and else-if statements use the .getPizzaSize() method from the Bucky.Pizza domain class to see what the user chose as the size they would like,
          * and depending on the size, it sets the cost accordingly
         */
         if (aPizzaOrder.getPizzaSize() == 10) {
@@ -234,7 +236,7 @@ public class PizzaTester
 
 
     /**
-     * The checkForDiscount() method uses the .getPizzaCustomerName() method from the Pizza domain class to check what the customer's name is.
+     * The checkForDiscount() method uses the .getPizzaCustomerName() method from the Bucky.Pizza domain class to check what the customer's name is.
      * If the customer's name is Mike or Diana/Diane, they get a discount of $2 which is stored in the discount variable, which then gets applied to the final cost in the main function.
      */
     public static double checkForDiscount()

@@ -1,3 +1,5 @@
+package Udemy;
+
 public class RegularExpressions {
 
     public static final String STRING_TEST = "This is my " + "small example";

@@ -1,3 +1,5 @@
+package Udemy;
+
 public class IntegerMethods {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-/*
+package Bucky;/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -115,7 +115,7 @@ public class Pizza
 
     public String toString()
     {
-        String pizzaDisplay = pizzaSize + "inch " + handThinDeep + " Pizza ";
+        String pizzaDisplay = pizzaSize + "inch " + handThinDeep + " Bucky.Pizza ";
         if (getCheeseTopping() || getPepperoniTopping() || getSausageTopping() || getOnionTopping() || getMushroomTopping())
             pizzaDisplay += " with: ";
         if (getCheeseTopping())

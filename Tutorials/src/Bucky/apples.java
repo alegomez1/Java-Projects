@@ -1,4 +1,4 @@
-import oracle.jvm.hotspot.jfr.JFR;
+package Bucky;
 
 import javax.swing.JFrame;
 //allows us to use windows here
