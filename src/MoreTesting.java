@@ -6,7 +6,7 @@ public class MoreTesting {
 
     public static void main(String[] args){
 
-      stringTester();
+      piHelper();
 
     }
 
