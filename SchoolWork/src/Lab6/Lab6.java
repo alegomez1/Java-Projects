@@ -2,11 +2,43 @@ package Lab6;
 public class Lab6
 {
 
+
+    /*
+    *   QUESTIONS FROM WORD DOCUMENT
+    *   Part A:
+    *   1. A
+    *   2. have a nice day
+    *   3. 0
+    *   4. 5
+    *   5. RUNTIME ERROR
+    *   6. I
+    *   7. A NICE DAY
+    *   8. HAVE A NICE DAY
+    *   9. RUNTIME ERROR
+    *   10. SYNTAX ERROR
+    *
+    *   Part B:
+    *   1. "ananaB"
+    *   2. "ecitsloS"
+    *   3. "terceS poT"
+    *   4. "baaaaaac"
+    *   5. "bac"
+     */
+
+    //Here in main I am calling the funWithStrings() method in order to run the program
     public static void main(String[] args) {
 
-     funWithStrings();
+    funWithStrings();
+
+
 
     }
+
+    /*
+    *   This method runs through different String functions such as substring, indexOf, etc. to manipulate a String variable called 'coolWord'.
+    *   Based on the method being used, a different resulting String is produced.
+    *   It also calls the reverse() method to give it an input and it returns the input but in reversed order.
+     */
 
     public static void funWithStrings() {
         /*
@@ -117,6 +149,11 @@ public class Lab6
      * @param toReverse The string to reverse
      * @return The reversed string
      */
+
+    /*
+    *   This method is used to reverse the order of letters in a word or phrase. It accepts a String parameter and returns a String output.
+    *   It uses a for-loop, concatenation, and the charAt method to achieve this.
+     */
     public static String reverse(String toReverse) {
 
 
@@ -132,5 +169,6 @@ public class Lab6
 
         return reversed;
     }
+
 
 }
