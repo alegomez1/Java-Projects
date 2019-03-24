@@ -21,8 +21,8 @@ public class JellyBeanTester
         }
 
         /**
-         * The createJellyBeanBag method will ask the user for input, and will
-         * use that input to create 3 JellyBean objects.
+         * The createJellyBeanBag method will ask the user for input, and will use that input to create 3 JellyBean objects.
+         * It creates 6 different String variables to store all of the user's reponses.
          */
         public static void createJellyBeanBag()
         {

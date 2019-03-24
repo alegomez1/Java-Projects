@@ -1,10 +1,11 @@
 package Lab6;
-
-public class Lab6 {
+public class Lab6
+{
 
     public static void main(String[] args) {
 
      funWithStrings();
+
     }
 
     public static void funWithStrings() {
@@ -31,11 +32,7 @@ public class Lab6 {
 
         String coolWord = "SuperCaliFragilisticExpialiDocious";
 
-       // String test = String.valueOf(coolWord.charAt(6));
-
         System.out.println(coolWord.valueOf(coolWord.charAt(6)).toUpperCase());
-
-
 
         int letterCounter =0;
 
@@ -64,10 +61,17 @@ public class Lab6 {
         String test1 = "cyber security";
         String test2 = "internet of things";
         String test3 = "cloud computing";
-        //write code below, should occupy at most six lines
-        //print reversed versions...
-        //print non-reversed versions...
-        ;
+
+        //Reversed versions:
+        System.out.println("---------------------------------");
+        System.out.println(reverse(test1));
+        System.out.println(reverse(test2));
+        System.out.println(reverse(test3));
+        //Normal versions:
+        System.out.println("---------------------------------");
+        System.out.println(test1);
+        System.out.println(test2);
+        System.out.println(test3);
 
 
 
@@ -79,6 +83,8 @@ public class Lab6 {
         that the calculated output matches the expected output. If they are
         different, then update your method until they match.
 
+
+
         Input   		Correct output
 
         "Banana"	 	"ananaB"
@@ -89,6 +95,12 @@ public class Lab6 {
 
         Fill out the final table, which is provided in the String Lab document.
         */
+        System.out.println("---------------------------------");
+        System.out.println(reverse("Banana"));
+        System.out.println(reverse("Solstice"));
+        System.out.println(reverse("Top Secret"));
+        System.out.println(reverse("caaaaaab"));
+        System.out.println(reverse("cab"));
 
 
     }
@@ -106,7 +118,14 @@ public class Lab6 {
      * @return The reversed string
      */
     public static String reverse(String toReverse) {
+
+
+
         String reversed = ""; //reversed must be built from scratch
+        for (int i=toReverse.length()-1; i>=0; i--){
+            int wordLength = toReverse.length();
+            reversed = reversed + toReverse.charAt(i);
+        }
 
         //Use toReverse’s characters to build reversed
         //Hint: Write a for-loop that uses concatenation and charAt!
