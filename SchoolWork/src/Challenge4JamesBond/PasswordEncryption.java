@@ -41,8 +41,41 @@ public class PasswordEncryption {
 
     public void encryptOrig()
     {
+        String spyMessage = origWord.toLowerCase();
+
+        String scrambledMessage = "";
+        char letter, newLetter;
+
+        int newLetterNum;
+
+        for (int i =0; i<spyMessage.length();i++){
+            letter = spyMessage.charAt(i);
+            //insert code for xyz
+            if (letter == 'a'){
+                newLetter = 'a';
+            }
+            else if (letter == 'y'){
+                newLetter = 'b';
+            }
+            else if (letter == 'z'){
+                newLetter ='c';
+            }
+            newLetterNum = ((int) letter) +3;
+            newLetter = (char)newLetterNum;
+
+            scrambledMessage += newLetter;
+
+        }
+
+        System.out.println(spyMessage);
+        System.out.println(scrambledMessage);
+        encryptWord = scrambledMessage;
+
+
+
+
         //Add code to take the origWord and encrypt it, storing
-        //the encrypted word in encryptWor
+        //the encrypted word in encryptWord
     }
 
     public void decryptEncrypt()
