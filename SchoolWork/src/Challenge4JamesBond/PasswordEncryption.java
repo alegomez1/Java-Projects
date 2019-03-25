@@ -42,7 +42,7 @@ public class PasswordEncryption {
     public void encryptOrig()
     {
         //Add code to take the origWord and encrypt it, storing
-        //the encrypted word in encryptWord
+        //the encrypted word in encryptWor
     }
 
     public void decryptEncrypt()
