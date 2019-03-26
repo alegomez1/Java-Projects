@@ -15,6 +15,8 @@ public class JamesBondTester {
 
         encryptPassword();
 
+        decryptPassword();
+
 
 //        int menuOption = displayMenu();
 //        switch(menuOption)
@@ -67,8 +69,9 @@ public class JamesBondTester {
         System.out.println("What word would you like to encrypt?");
         String userWord = keyboard.nextLine();
 
-        PasswordEncryption passEncr = new PasswordEncryption(userWord, true);
-        passEncr.encryptOrig();
+        PasswordEncryption passEncrypt = new PasswordEncryption(userWord, true);
+        passEncrypt.encryptOrig();
+
 
 
     }
@@ -82,7 +85,11 @@ public class JamesBondTester {
         //    ask user to guess the decrypted word.  If user guesses
         //    correctly, state "Successfully decrypted…mission accomplished"
         //    If user did not guess correctly, state "Unsuccessfully decrypted...Danger, danger!”
+        System.out.println("What encrypted word would you like to decrypt?");
+        String userWord = keyboard.nextLine();
 
+        PasswordEncryption passDecrypt = new PasswordEncryption(userWord, false);
+        passDecrypt.decryptEncrypt();
 
     }
 

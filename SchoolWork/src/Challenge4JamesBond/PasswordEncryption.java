@@ -51,7 +51,7 @@ public class PasswordEncryption {
         for (int i =0; i<spyMessage.length();i++){
             letter = spyMessage.charAt(i);
             //insert code for xyz
-            if (letter == 'a'){
+            if (letter == 'x'){
                 newLetter = 'a';
             }
             else if (letter == 'y'){
@@ -60,8 +60,12 @@ public class PasswordEncryption {
             else if (letter == 'z'){
                 newLetter ='c';
             }
-            newLetterNum = ((int) letter) +3;
-            newLetter = (char)newLetterNum;
+
+            else{
+                newLetterNum = ((int) letter) +3;
+                newLetter = (char)newLetterNum;
+            }
+
 
             scrambledMessage += newLetter;
 
@@ -80,6 +84,37 @@ public class PasswordEncryption {
 
     public void decryptEncrypt()
     {
+        String wordToDecrypt = getEncryptedWord();
+        String newMessage = "";
+
+        char letter, newLetter;
+        int newLetterNum;
+
+        for (int i =0;i<wordToDecrypt.length();i++){
+            letter = wordToDecrypt.charAt(i);
+            //insert code for xyz
+            if (letter == 'a'){
+                newLetter = 'x';
+            }
+            else if (letter == 'b'){
+                newLetter = 'y';
+            }
+            else if (letter == 'c'){
+                newLetter ='z';
+            }
+
+            else{
+                newLetterNum = ((int) letter) -3;
+                newLetter = (char)newLetterNum;
+            }
+
+            newMessage += newLetter;
+
+        }
+
+        System.out.println(wordToDecrypt);
+        System.out.println(newMessage);
+        origWord = newMessage;
         //Add code to take the encryptWord and decrypt it, storing
         //the original word in orgiWord
     }
