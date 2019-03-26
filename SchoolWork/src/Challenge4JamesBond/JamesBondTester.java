@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class JamesBondTester {
 
 
-
-
+    /*
+    *   Here in main I've created a do-while loop that will run as long as the user picks either option 1 or 2
+    *   Inside the do-while loop is a switch statement that is based on the result of the int menuOption which is returned from the displayMenu() method
+     */
     public static void main(String[] args)
     {
-        //Add a do-while loop that keeps looping while the user
-        //enters either 1 or 2.
         int loop=0;
         do
         {
@@ -31,15 +31,16 @@ public class JamesBondTester {
             }
         }while (loop == 1 || loop == 2);
 
-
-
     }
-
+    /*
+    *   This method is used to ask the user what option the would like to do, input as an int value
+    *   It then returns that int
+    *   It runs within a do-while loop that validates the user has chosen a valid option
+     */
     public static int displayMenu()
     {
         Scanner keyboard = new Scanner(System.in);
-
-        int userOption =0;
+        int userOption;
 
         do
         {
@@ -47,19 +48,13 @@ public class JamesBondTester {
              userOption = keyboard.nextInt();
              return userOption;
         }while (userOption == 0);
-
-
-        //Display the menu to show:
-        // 1.  Encrypt a Password?
-        // 2.  Decrypt a Password?
-        // 3.  Stop Spying...
-        //Get input from user and store in a local variable
-        //loop to validate value entered as 1, 2, or 3
-        //and if not, keep looping and asking user to enter valid value
-        //return value entered
-        //temporary
     }
-
+    /*
+    *   This method is used to encrypt a word that the user gives
+    *   After accepting the String userWord as input, it instantiates the PasswordEncryption object, and passes it the userWord and a boolean of true so that it encrypts
+    *   For extra credit it asks the user to guess what the encrypted word would be, if then tells them if their guess was correct or incorrect
+    *   Finally, it displays what the encrypted word is
+     */
     public static void encryptPassword()
     {
         Scanner keyboard = new Scanner(System.in);
@@ -92,7 +87,12 @@ public class JamesBondTester {
 
 
     }
-
+    /*
+     *   This method is used to decrypt a word that the user gives
+     *   After accepting the String userWord as input, it instantiates the PasswordEncryption object, and passes it the userWord and a boolean of false so that it decrypts
+     *   For extra credit it asks the user to guess what the decrypted word would be, if then tells them if their guess was correct or incorrect
+     *   Finally, it displays what the decrypted word is
+     */
     public static void decryptPassword()
 
     {
@@ -123,11 +123,10 @@ public class JamesBondTester {
         }
 
         System.out.println("The correctly decrypted word is: " + passDecrypt.getOrigWord());
-
-
-
     }
-
+    /*
+    *   This method is used to end the program and "self-destruct"
+     */
     public static void selfDestruct()
     {
         //Advise the user that this program will self-destruct in 5 seconds
