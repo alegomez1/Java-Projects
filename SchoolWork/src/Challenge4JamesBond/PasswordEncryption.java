@@ -71,8 +71,7 @@ public class PasswordEncryption {
 
         }
 
-        System.out.println(spyMessage);
-        System.out.println(scrambledMessage);
+       // System.out.println(scrambledMessage);
         encryptWord = scrambledMessage;
 
 
@@ -112,8 +111,7 @@ public class PasswordEncryption {
 
         }
 
-        System.out.println(wordToDecrypt);
-        System.out.println(newMessage);
+      //  System.out.println(newMessage);
         origWord = newMessage;
         //Add code to take the encryptWord and decrypt it, storing
         //the original word in orgiWord
