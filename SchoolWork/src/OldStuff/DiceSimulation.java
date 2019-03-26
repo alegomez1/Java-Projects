@@ -1,3 +1,5 @@
+package OldStuff;
+
 import java.util.Random;
 
 /**
@@ -30,7 +32,7 @@ public class DiceSimulation {
     }
     /*
     * This method is used to to roll the dice 10,000 times while using a while loop
-    * It creates an instance of the Dice class called myDice which is used to call methods from the Dice class
+    * It creates an instance of the OldStuff.Dice class called myDice which is used to call methods from the OldStuff.Dice class
     * At the start of the method I call the clearCounters() method in order to clear the values of the variables
     * At the end I call the summarizeResults() method in order to display the values for each variable
      */
@@ -44,7 +46,7 @@ public class DiceSimulation {
 
         while (count!=NUMBER){
             myDice.rollDice();
-            //I declare these two variables equal to the getDie() methods from the Dice class so it's easier to read in the if/else-if statements
+            //I declare these two variables equal to the getDie() methods from the OldStuff.Dice class so it's easier to read in the if/else-if statements
            int die1 = myDice.getDie1();
            int die2= myDice.getDie2();
 
@@ -86,7 +88,7 @@ public class DiceSimulation {
     /*
     * This method is used to roll the dice 10,000 but using a do-while loop
     * The clearCounters() method is called at the beginning in order to set the values of the variables back to 0
-    * I create a myDice object as an instance of the Dice() class in order to call its methods
+    * I create a myDice object as an instance of the OldStuff.Dice() class in order to call its methods
     * At the end I call the summarizeResults() method in order to display the values for each variable
      */
     public static void rollDiceAndTabulateDoWhile()
@@ -96,7 +98,7 @@ public class DiceSimulation {
         do
         {
             myDice.rollDice();
-            //I declare these two variables equal to the getDie() methods from the Dice class so it's easier to read in the if/else-if statements
+            //I declare these two variables equal to the getDie() methods from the OldStuff.Dice class so it's easier to read in the if/else-if statements
             int die1 = myDice.getDie1();
             int die2= myDice.getDie2();
 
@@ -139,7 +141,7 @@ public class DiceSimulation {
     /*
     * This method is used to roll the dice 10,000 times but using a for loop instead
     * The clearCounters() method is called at the beginning in order to set the values of the variables back to 0
-    * I create a myDice object as an instance of the Dice() class in order to call its methods
+    * I create a myDice object as an instance of the OldStuff.Dice() class in order to call its methods
     * At the end I call the summarizeResults() method in order to display the values for each variable
      */
     public static void rollDiceAndTabulateFor()
@@ -151,7 +153,7 @@ public class DiceSimulation {
         for (int i = 0; i<NUMBER; i++){
             myDice.rollDice();
 
-            //I declare these two variables equal to the getDie() methods from the Dice class so it's easier to read in the if/else-if statements
+            //I declare these two variables equal to the getDie() methods from the OldStuff.Dice class so it's easier to read in the if/else-if statements
             int die1 = myDice.getDie1();
             int die2 = myDice.getDie2();
 

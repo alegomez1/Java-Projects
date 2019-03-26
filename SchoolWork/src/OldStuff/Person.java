@@ -1,3 +1,5 @@
+package OldStuff;
+
 import java.text.DecimalFormat;
 public class Person {
 
@@ -57,7 +59,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "OldStuff.Person{" +
                 "firstName='" + firstName + '\'' +
                 ", heightInches=" + heightInches +
                 ", weightPounds=" + weightPounds +

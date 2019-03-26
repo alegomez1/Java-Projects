@@ -1,3 +1,5 @@
+package OldStuff;
+
 import java.util.Scanner;
 public class Lab4b {
 

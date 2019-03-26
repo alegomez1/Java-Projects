@@ -1,3 +1,4 @@
+package OldStuff;
 
 import java.util.Random;
 import javax.swing.JOptionPane;

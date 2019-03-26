@@ -1,3 +1,5 @@
+package OldStuff;
+
 import java.util.Random;
 
 public class Dice {
@@ -6,7 +8,7 @@ public class Dice {
     private int die1;
     private int die2;
 
-    //This is the constructor for the Dice class. It initializes each die's value to 0
+    //This is the constructor for the OldStuff.Dice class. It initializes each die's value to 0
     public Dice()
     {
         die1 = 0;

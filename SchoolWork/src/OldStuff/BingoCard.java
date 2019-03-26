@@ -1,8 +1,10 @@
+package OldStuff;
+
 import java.util.Random;
 
 public class BingoCard
 {
-    //These are all of the instance variables that represent the spaces on the Bingo card
+    //These are all of the instance variables that represent the spaces on the OldStuff.Bingo card
     private int bNum1;
     private int bNum2;
     private int bNum3;
@@ -33,7 +35,7 @@ public class BingoCard
     private int oNum4;
     private int oNum5;
 
-    //This is the constructor which simulates a Bingo card. Each instance variable is set to a random number between a certain range
+    //This is the constructor which simulates a OldStuff.Bingo card. Each instance variable is set to a random number between a certain range
     public BingoCard()
     {
         Random myRan = new Random();
@@ -67,8 +69,8 @@ public class BingoCard
         this.oNum3 = myRan.nextInt(15) + 61;
         this.oNum4 = myRan.nextInt(15) + 61;
         this.oNum5 = myRan.nextInt(15) + 61;
-        //Constructor for a BingoCard
-        //Generate a random number for each instance variable in the Bingo Card, using
+        //Constructor for a OldStuff.BingoCard
+        //Generate a random number for each instance variable in the OldStuff.Bingo Card, using
         //the following range of numbers:
 
         // "B" (numbers 1–15), "I" (numbers 16–30),
@@ -278,8 +280,8 @@ public class BingoCard
     }
 
     /*
-    *   This gotBingo() method is used to check whether or not the user won Bingo
-    *   It checks to see if all the numbers horizontally, diagonally, or vertically are equal to zero to indicate that the user scored Bingo
+    *   This gotBingo() method is used to check whether or not the user won OldStuff.Bingo
+    *   It checks to see if all the numbers horizontally, diagonally, or vertically are equal to zero to indicate that the user scored OldStuff.Bingo
     *   If so it returns true, otherwise it returns false
      */
     public boolean gotBingo()
@@ -312,11 +314,11 @@ public class BingoCard
 
     }
 
-    //This is the toString() method meant to display the values of each variable in a way that mimics a real Bingo card
+    //This is the toString() method meant to display the values of each variable in a way that mimics a real OldStuff.Bingo card
     public String toString()
     {
 
-        return "BingoCard:\n" + bNum1 + "  " + bNum2 + "  " + bNum3 + "  " + bNum4 + "  " + bNum5 + "  \n" +
+        return "OldStuff.BingoCard:\n" + bNum1 + "  " + bNum2 + "  " + bNum3 + "  " + bNum4 + "  " + bNum5 + "  \n" +
                 iNum1 + "  " + iNum2 + "  " + iNum3 + "  " + iNum4 + "  " + iNum5 + "  \n" +
                 nNum1 + "  " + nNum2 + "  " + nNum3 + "  " + nNum4 + "  " + nNum5 + "  \n" +
                 gNum1 + "  " + gNum2 + "  " + gNum3 + "  " + gNum4 + "  " + gNum5 + "  \n" +

@@ -58,14 +58,7 @@ public class JamesBondTester {
     public static void encryptPassword()
     {
         Scanner keyboard = new Scanner(System.in);
-        //1.  Ask user for for to encrypt
-        //2.  Instantiate the PasswordEncryption object, passing
-        //    it the word and a boolean value of true, meaning encrypt
-        //3.  Display the encrypted word to the user.
-        //4.  Extra Credit: Before displaying encrypted word,
-        //    ask user to guess the encrypted word.  If user guesses
-        //    correctly, state "Successfully encrypted…mission accomplished"
-        //    If user did not guess correctly, state "Unsuccessfully encrypted...Danger, danger!”
+
         System.out.println("What word would you like to encrypt?");
         String userWord = keyboard.nextLine();
 
@@ -87,6 +80,7 @@ public class JamesBondTester {
 
 
     }
+
     /*
      *   This method is used to decrypt a word that the user gives
      *   After accepting the String userWord as input, it instantiates the PasswordEncryption object, and passes it the userWord and a boolean of false so that it decrypts
@@ -97,14 +91,7 @@ public class JamesBondTester {
 
     {
         Scanner keyboard = new Scanner(System.in);
-        //1.  Ask user for encrypted word to decrypt
-        //2.  Instantiate the PasswordEncryption object, passing
-        //    it the word and a boolean value of false, meaning decrypt
-        //3.  Display the decrypted word to the user.
-        //4.  Extra Credit: Before displaying decrypted word,
-        //    ask user to guess the decrypted word.  If user guesses
-        //    correctly, state "Successfully decrypted…mission accomplished"
-        //    If user did not guess correctly, state "Unsuccessfully decrypted...Danger, danger!”
+
         System.out.println("What encrypted word would you like to decrypt?");
         String userWord = keyboard.nextLine();
 
@@ -129,10 +116,7 @@ public class JamesBondTester {
      */
     public static void selfDestruct()
     {
-        //Advise the user that this program will self-destruct in 5 seconds
-        //5 - 4 - 3 - 2 - 1 - 0 Boom!
         System.out.println("This program will self-destruct in 5 seconds\n5\n4\n3\n2\n1\n0\nBoom!");
-
     }
 
 }

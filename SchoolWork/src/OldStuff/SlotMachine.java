@@ -1,7 +1,7 @@
-
+package OldStuff;
 
 /**
- *  This is the constructor class that ties in to the MidtermPractice driver class
+ *  This is the constructor class that ties in to the OldStuff.MidtermPractice driver class
  */
 public class SlotMachine
 {

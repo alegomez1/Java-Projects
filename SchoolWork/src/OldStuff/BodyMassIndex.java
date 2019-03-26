@@ -1,7 +1,9 @@
+package OldStuff;
+
 import java.util.Scanner;
 public class BodyMassIndex {
 
-    //This static Person variable allows it to be called later on
+    //This static OldStuff.Person variable allows it to be called later on
     public static Person anyPerson;
 
     //Here in main I am calling the two methods to run the program
@@ -16,7 +18,7 @@ public class BodyMassIndex {
 
     /*
     This method is used to ask the user what their first name, height, and weight are, and then stores those values into variables
-    It then creates a new instance of the Person object and passes those values as parameters
+    It then creates a new instance of the OldStuff.Person object and passes those values as parameters
      */
     public static void createPersonObject()
     {
@@ -38,7 +40,7 @@ public class BodyMassIndex {
 
         anyPerson = new Person(firstName, height, weight);
 
-        //Create a Person object and store it in the static variable, anyPerson
+        //Create a OldStuff.Person object and store it in the static variable, anyPerson
         //anyPerson = new ...
 
     }

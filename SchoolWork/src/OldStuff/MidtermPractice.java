@@ -1,3 +1,5 @@
+package OldStuff;
+
 import java.util.Random;
 import java.util.Scanner;
 /**
@@ -18,7 +20,7 @@ public class MidtermPractice
     {
         Scanner keyboard = new Scanner(System.in);
         String userPlayAgain = "yes";
-        //Instantiate a SlotMachine object:
+        //Instantiate a OldStuff.SlotMachine object:
         aSM = new SlotMachine();
 
         do
@@ -42,7 +44,7 @@ public class MidtermPractice
 *   This method is used to generate 3 random numbers
 *   It creates an instance of the Random class under the object myRan. This object is then used to generate those 3 random numbers from 1-7
 *   These numbers are then assigned to int variables num1, num2, and num3
-*   Then the object aSM uses its setter functions to set each variable to the RanNum1, RanNum2, and RanNum3 from the SlotMachine class
+*   Then the object aSM uses its setter functions to set each variable to the RanNum1, RanNum2, and RanNum3 from the OldStuff.SlotMachine class
  */
     public static void playSlotMachine()
     {

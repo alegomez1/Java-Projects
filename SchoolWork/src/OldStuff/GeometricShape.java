@@ -1,3 +1,5 @@
+package OldStuff;
+
 public class GeometricShape {
 
     private double side1, side2, side3; //These are the variables necessary to calculat the perimeter of a triangle
@@ -122,7 +124,7 @@ public class GeometricShape {
 
     @Override
     public String toString() {
-        return "GeometricShape{" +
+        return "OldStuff.GeometricShape{" +
                 "side1=" + side1 +
                 ", side2=" + side2 +
                 ", side3=" + side3 +

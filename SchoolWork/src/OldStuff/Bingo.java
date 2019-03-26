@@ -1,3 +1,5 @@
+package OldStuff;
+
 import java.util.Random;
 import java.util.Scanner;
 public class Bingo {
@@ -17,7 +19,7 @@ public class Bingo {
         /*
         *   This do-while loop is meant to run at least once and then ask the player if they would like to keep playing
         *   Their response is tied to the playAgain variable
-        *   Every time the loop runs, the methods playGame() and determineWinner() are called to run the program and simulate a Bingo game
+        *   Every time the loop runs, the methods playGame() and determineWinner() are called to run the program and simulate a OldStuff.Bingo game
         *   How many games the user has won so far is also displayed
          */
         do
@@ -35,7 +37,7 @@ public class Bingo {
     }
 
     /*
-    *   This method is meant to simulate a Bingo game by running a loop 25 times to simulate the drawing of 25 random numbers in a Bingo game
+    *   This method is meant to simulate a OldStuff.Bingo game by running a loop 25 times to simulate the drawing of 25 random numbers in a OldStuff.Bingo game
     *   There are then a series of if statements to check to see if the random number generated is between a certain range, and furthermore to see if it matches one of the random numbers tied to the letters
     *   If there is a match, that letter's number becomes a 0 to simulate that user's number having been drawn
      */
@@ -137,9 +139,9 @@ public class Bingo {
     }
 
     /*
-    *   This method is used to determine if the user's Bingo card has won or not
-    *   It first displays the card in a way that simulates the way a real Bingo card is set up
-    *   Then it called the gotBingo() method from the constructor class to determine if the user has got Bingo
+    *   This method is used to determine if the user's OldStuff.Bingo card has won or not
+    *   It first displays the card in a way that simulates the way a real OldStuff.Bingo card is set up
+    *   Then it called the gotBingo() method from the constructor class to determine if the user has got OldStuff.Bingo
     *   If they have it tells them seo and adds a 1 to the totalGamesWon variable, otherwise it tells the user they did not win
      */
     public static void determineWinner()
@@ -162,7 +164,7 @@ public class Bingo {
            totalGamesWon +=1;
        }
        else {
-           System.out.println("\nNo Bingo");
+           System.out.println("\nNo OldStuff.Bingo");
        }
     }
 

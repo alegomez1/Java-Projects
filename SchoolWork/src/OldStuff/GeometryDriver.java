@@ -1,3 +1,5 @@
+package OldStuff;
+
 import java.util.Scanner;
 public class GeometryDriver {
 
@@ -44,7 +46,7 @@ public static GeometricShape geometricObject;
         {
             case 1:
                 //ask user for the radius
-                //re-create a GeometricShape with the radius
+                //re-create a OldStuff.GeometricShape with the radius
                 //put logic here to call the perimeter method
                 System.out.println("What is the radius of the circle?");
                 radius = keyboard.nextDouble();
@@ -54,7 +56,7 @@ public static GeometricShape geometricObject;
                 break;
             case 2:
                 //ask user for the length and width
-                //re-create a GeometricShape with the length and width
+                //re-create a OldStuff.GeometricShape with the length and width
                 //put logic here to call the perimeter method
                 System.out.println("What is the length of the rectangle?");
                 length = keyboard.nextDouble();
@@ -64,7 +66,7 @@ public static GeometricShape geometricObject;
                 break;
             case 3:
                 //ask user for side1, side2, and side3
-                //re-create a GeometricShape with the the 3 sides
+                //re-create a OldStuff.GeometricShape with the the 3 sides
                 //put logic here to call the perimeter method
                 System.out.println("What is the length of side1?");
                 side1 = keyboard.nextDouble();
