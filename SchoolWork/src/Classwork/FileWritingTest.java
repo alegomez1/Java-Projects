@@ -17,7 +17,7 @@ public class FileWritingTest {
         major = keyboard.nextLine();
 
         System.out.println("What is your age?");
-        age = keyboard.nextInt(); //test
+        age = keyboard.nextInt();
 
         String sentence = firstName + " is majoring in " + major + " and is " + age + " years old";
         System.out.println(sentence);
