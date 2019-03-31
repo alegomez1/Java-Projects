@@ -8,9 +8,12 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Driver {
+    /*
+    *   Here in main there is a do-while loop that runs as long as the option does not equal 4 which is to exit the program
+    *   Within the loop there is a switch statement, and depending on the user's response to the displayMenu() method, a different part of the program will run
+     */
     public static void main(String[] args) throws IOException{
-        // Keep asking the user what they want to do here until they chose
-        // the option to stop.
+
         Scanner keyboard = new Scanner(System.in);
         String name, year;
 
@@ -26,36 +29,48 @@ public class Driver {
             switch (menuOption)
             {
                 case 1:
-                    //call appropriate method
                     System.out.println("What is the student's name?");
                     name = keyboard.nextLine();
 
 
-                    System.out.println("What year is the student?");
+                    System.out.println("What year is the student?\n" +
+                            "F = Freshman\n" +
+                            "s = Sophmore\n" +
+                            "J = Junior\n" +
+                            "S = Senior");
                     year = keyboard.nextLine();
 
                     appendToFile(name, year);
 
                     break;
                 case 2:
-                    //call appropriate method
+                    deleteAllRecords();
                     break;
                 case 3:
-                    //call appropriate method
+                    countStudents();
                     break;
                 case 4:
-                    //sout a message that says "bye" and "thanks"
+                    System.out.println("Bye, thanks!");
                     break;
                 default:
-                    //sout a message that says "invalid menu option. try again."
+                    System.out.println("Invalid option, try again");
             }
 
 
         } while (menuOption != 4);
     }
-
+    /*
+    *   This method accepts two String parameters which are the student's name and their year level
+    *   These parameters get concatenated in a String variable called studentInfo
+    *   An instance of the FileWriter is then created which accepts the file name and a boolean as parameters
+    *   Then an instance of the PrintWriter class is created and accepts the FileWriter object as a parameter
+    *   The PrintWriter object then adds a line containing the value of studentInfo, and then closes
+    *   Then an instance of the Scanner class is created and it accepts an instance of the File class as a parameter. The file class takes the file name as a parameter
+    *   Then the Scanner object is closed
+    *
+     */
     public static void appendToFile(String studentName, String yearLevel) throws IOException {
-        // Add a the data for a new student to the file.
+
 
         String studentInfo = yearLevel + " " + studentName;
 
@@ -69,40 +84,64 @@ public class Driver {
 
         inputFile.close();
 
-
-        //FileWriter allows the file to be appended as long as we reference it in PrintWriter (fw)
-//        FileWriter fw = new FileWriter("output.txt", true);
-//        PrintWriter pw = new PrintWriter(fw);
-//        pw.println(sentence);
-//
-//        pw.close();
-
     }
-
+    /*
+    *   This method is used to delete all lines in the file
+    *   It creates an instance of the PrintWriter class and passes the file as a parameter, and then closes that object
+     */
     public static void deleteAllRecords() throws IOException {
-        // Remember that using the PrintWriter with the file name as the paramater
-        // will overwrite the contents of the file.
 
+
+        PrintWriter pw = new PrintWriter("Students.txt");
+        pw.close();
 
     }
-
+    /*
+    *   This method is used to count what level each student entered in the file is(e.g. Freshman, Sophmore, etc)
+    *   It runs a while loop to cycle through each line of the file that is passed as a parameter in the File object 'aFile'
+    *   The Scanner class then looks at aFile and cycles through each line there
+    *   A series of if statements check if the first character of the line is an F, s, J, or S and adds 1 to the counters for each student level
+    *   Finally, it closes the Scanner object and prints out the count for each student level
+     */
     public static void countStudents() throws FileNotFoundException {
-        // Print out how many seniors, juniors, sophomores, and freshman there are.
-        // Example: 1 Freshman, 2 Sophmore, 1 Junior, and 1 Senior students.
 
-        //create file object using the real file name
-        /*
-        *   Create a scanner pbject using the file object
-        *   While loop (while inputFile.hasNext() )
-        *   Read each record into a variable(s) using .nextLine()
-        *   Set counters for F S and s
-        *   Print number of each
-        *
-         */
+        int freshCounter = 0;
+        int sophCounter =0;
+        int junCounter =0;
+        int senCounter =0;
+        int studentCounter = 0;
 
+        File aFile = new File("Students.txt");
+
+        Scanner inputFile = new Scanner(aFile);
+
+        while (inputFile.hasNext()){
+            String sentence = inputFile.nextLine();
+            if (sentence.charAt(0) == 'F'){
+                freshCounter++;
+                studentCounter++;
+            }
+            if (sentence.charAt(0) == 's'){
+                sophCounter++;
+                studentCounter++;
+            }
+            if (sentence.charAt(0) == 'J'){
+                junCounter++;
+                studentCounter++;
+            }
+            if (sentence.charAt(0) == 'S'){
+                senCounter++;
+                studentCounter++;
+            }
+        }
+        inputFile.close();
+
+        System.out.printf("Total Freshman: %d\nTotal Sophmores: %d\nTotal Juniors: %d\nTotal Seniors: %d\nTotal Students: %d\n", freshCounter, sophCounter, junCounter, senCounter, studentCounter);
 
     }
-
+    /*
+    *   This method is used to display a menu of options for the user to pick from and run different parts of the program
+     */
     public static void displayMenu()
     {
         System.out.println("Enter a menu choice:" );
