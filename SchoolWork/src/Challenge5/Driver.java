@@ -13,9 +13,9 @@ public class Driver {
         this.speed = speed;
     }
     public Driver(){
-        this.year = 2017;
-        this.model = "Model S";
-        this.make = "Tesla";
+        this.year = 2000;
+        this.model = "Malibu";
+        this.make = "Chevy";
         this.speed = 60;
     }
 
