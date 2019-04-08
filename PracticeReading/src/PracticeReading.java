@@ -8,6 +8,7 @@ public class PracticeReading {
 
     public static void main(String[] args) throws IOException{
 
+        createStudentObjects();
     }
     public static void createStudentObjects() throws IOException{
         String name = "";
@@ -26,5 +27,7 @@ public class PracticeReading {
         prevWinner.setPantherID(id);
 
         inFile.close();
+
+        System.out.println(prevWinner.toString());
     }
 }

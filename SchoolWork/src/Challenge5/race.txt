@@ -1,1 +1,1 @@
-Tesla ModelS 2018 120
+Driver{year=2000, speed=226, model='Malibu', make='Chevy'}
