@@ -1,6 +1,7 @@
 package Lab10;
 import java.util.Scanner;
 
+
 //Task 1 Questions:
 /*
 
@@ -85,6 +86,8 @@ public class Lab10 {
     public static String[] data;
 
     public static void main(String[] args) {
+
+
 
         Scanner keyboard = new Scanner(System.in);
 
