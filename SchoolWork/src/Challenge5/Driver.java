@@ -2,16 +2,18 @@ package Challenge5;
 import java.util.*;
 
 public class Driver {
-
+    //These are all the variables used in this constructor class
     private int year, speed;
     private String model, make;
 
+    //This is the non default constructor that accepts parameters
     public Driver(int year, String model, String make, int speed){
         this.year = year;
         this.model = model;
         this.make = make;
         this.speed = speed;
     }
+    //This is the default constructor
     public Driver(){
         this.year = 2000;
         this.model = "Malibu";
@@ -19,6 +21,7 @@ public class Driver {
         this.speed = 60;
     }
 
+    //This method randomly generates a number from 5-70 and adds it to the speed variable
     public void accelerate(){
         Random myRan = new Random();
         int ranSpeed = myRan.nextInt(70)+5;
@@ -26,6 +29,7 @@ public class Driver {
         this.speed += ranSpeed;
     }
 
+    //This method randomly generates a number between 5-30 and subtracts it from the speed variable
     public void brake(){
         Random myRan = new Random();
         int ranSpeed = myRan.nextInt(30)+5;
@@ -33,6 +37,7 @@ public class Driver {
         this.speed -= ranSpeed;
     }
 
+    //These are all the getters and setters
     public int getSpeed(){
         return speed;
     }
@@ -64,6 +69,7 @@ public class Driver {
     public void setMake(String make) {
         this.make = make;
     }
+    //This is the toString that shows the values of the variables
     @Override
     public String toString() {
         return "Driver{" +
