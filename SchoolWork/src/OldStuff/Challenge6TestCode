@@ -16,10 +16,18 @@ num4 = myRan.nextInt(60)+1;
 num5 = myRan.nextInt(60)+1;
 num6 = myRan.nextInt(60)+1;
 
-
 }
 
+/*
+* This method is used to get input from the user
+* The user is asked to enter 6 lottery numbers ranging from 1-60
+* It 'cheats' by first displaying what the numbers the constructor generated are
+* It does this by using an enhanced for loop to print each element of the lotteryNumbers array
+* Then, it runs a loop 6 times to get input from the user for their 6 lottery number guesses
+* Each guess is stored in the array at index i
+*/
 public static void getUserPicks(){
+Scanner keyboard = new Scanner(System.int);
 System.out.println("Please enter your 6 lottery number choices\nNumbers from 1-60");
 
 System.out.println("The numbers already generated are:"):
@@ -29,5 +37,15 @@ for(int i : lotteryNumbers){
 System.out.println(i);
 };
 
+int userGuess;
+
+//for loop to take each user number
+for(int i = 0; i<6; i++){
+int number = i+1;
+System.out.println("Enter number choice " + number);
+userGuess = keyboard.nextInt();
+
+userLotteryPicks[i] = userGuess;
+}
 
 }
