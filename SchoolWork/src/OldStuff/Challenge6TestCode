@@ -1,0 +1,33 @@
+//Lottery Class------------------------------------
+
+//Default Constructor
+
+static int[] lotteryNumbers = new int[6];
+static int[] userLotteryPicks = new int[6];
+
+public Lottery(){
+Random myRan = new Random();
+int num1, num2, num3. num4, num5, num6;
+
+num1 = myRan.nextInt(60)+1;
+num2 = myRan.nextInt(60)+1;
+num3 = myRan.nextInt(60)+1;
+num4 = myRan.nextInt(60)+1;
+num5 = myRan.nextInt(60)+1;
+num6 = myRan.nextInt(60)+1;
+
+
+}
+
+public static void getUserPicks(){
+System.out.println("Please enter your 6 lottery number choices\nNumbers from 1-60");
+
+System.out.println("The numbers already generated are:"):
+
+//for loop to print each number in the array
+for(int i : lotteryNumbers){
+System.out.println(i);
+};
+
+
+}
