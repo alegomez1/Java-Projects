@@ -9,9 +9,9 @@ public class LotteryGame {
 
         lotto.getUserPicks();
 
-        System.out.printf("Lotto numbers are: %d %d %d %d %d %d\n", lotto.getNum1(), lotto.getNum2(), lotto.getNum3(), lotto.getNum4(), lotto.getNum5(), lotto.getNum6());
+        System.out.printf("Lotto numbers are: %d %d %d %d %d %d\n", lotto.lotteryNumbers[0], lotto.lotteryNumbers[1], lotto.lotteryNumbers[2], lotto.lotteryNumbers[3], lotto.lotteryNumbers[4], lotto.lotteryNumbers[5]);
 
-        System.out.printf("Your numbers are: %d %d %d %d %d %d\n", lotto.userLotteryPicks[0],lotto.getUserNum2(),lotto.getUserNum3(),lotto.getUserNum4(),lotto.getUserNum5(),lotto.getUserNum6());
+        System.out.printf("Your numbers are: %d %d %d %d %d %d\n", lotto.userLotteryPicks[0],lotto.userLotteryPicks[1],lotto.userLotteryPicks[2],lotto.userLotteryPicks[3],lotto.userLotteryPicks[4], lotto.userLotteryPicks[5]);
 
         lotto.setNum1(lotto.userNum1);
 

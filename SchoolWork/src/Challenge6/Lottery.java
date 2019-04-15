@@ -13,12 +13,12 @@ public class Lottery {
     public Lottery() {
         Random myRan = new Random();
 
-        this.num1 = myRan.nextInt(3) + 1;
-        this.num2 = myRan.nextInt(3) + 1;
-        this.num3 = myRan.nextInt(3) + 1;
-        this.num4 = myRan.nextInt(3) + 1;
-        this.num5 = myRan.nextInt(3) + 1;
-        this.num6 = myRan.nextInt(3) + 1;
+        this.num1 = myRan.nextInt(60) + 1;
+        this.num2 = myRan.nextInt(60) + 1;
+        this.num3 = myRan.nextInt(60) + 1;
+        this.num4 = myRan.nextInt(60) + 1;
+        this.num5 = myRan.nextInt(60) + 1;
+        this.num6 = myRan.nextInt(60) + 1;
 
 //        num1 = lotteryNumbers[0];
 //        num2 = lotteryNumbers[1];
@@ -33,6 +33,13 @@ public class Lottery {
         setNum4(num4);
         setNum5(num5);
         setNum6(num6);
+
+        lotteryNumbers[0] = num1;
+        lotteryNumbers[1] = num2;
+        lotteryNumbers[2] = num3;
+        lotteryNumbers[3] = num4;
+        lotteryNumbers[4] = num5;
+        lotteryNumbers[5] = num6;
 
     }
 
@@ -87,9 +94,6 @@ public class Lottery {
 
         return counter;
     }
-
-
-
 
 
     public static int[] getLotteryNumbers() {
