@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 public class Lottery {
 
+    //Here I declare the two int arrays, each holding six items
     static int[] lotteryNumbers = new int[6];
     static int[] userLotteryPicks = new int[6];
 
+    //These are all the variables that get used during the program
     static int num1, num2, num3, num4, num5, num6;
     static int userNum1,userNum2,userNum3,userNum4,userNum5,userNum6;
 
+    //This is the default constructor, it sets each num variable equal to a random value between 1-60
     public Lottery() {
         Random myRan = new Random();
 
@@ -20,19 +23,8 @@ public class Lottery {
         this.num5 = myRan.nextInt(60) + 1;
         this.num6 = myRan.nextInt(60) + 1;
 
-//        num1 = lotteryNumbers[0];
-//        num2 = lotteryNumbers[1];
-//        num3 = lotteryNumbers[2];
-//        num4 = lotteryNumbers[3];
-//        num5 = lotteryNumbers[4];
-//        num6 = lotteryNumbers[5];
 
-        setNum1(num1);
-        setNum2(num2);
-        setNum3(num3);
-        setNum4(num4);
-        setNum5(num5);
-        setNum6(num6);
+        validateNumbers(lotteryNumbers);
 
         lotteryNumbers[0] = num1;
         lotteryNumbers[1] = num2;
@@ -41,6 +33,24 @@ public class Lottery {
         lotteryNumbers[4] = num5;
         lotteryNumbers[5] = num6;
 
+    }
+
+    /*
+    *   This method is used to validate that the numbers in the array are unique
+    *   It takes an int array as a parameter and runs nested for loops to check each number in the parameter array vs. the values of the lotteryNumbers array
+    *   If it finds that any are equal, it generates a new random number from 1-60 and sets it equal to that array index
+     */
+    public static void validateNumbers(int [] anArray){
+        Random myRan = new Random();
+        for (int i = 0; i<6; i++){
+
+            for (int j = 0; j<6; j++){
+                int newNum = myRan.nextInt(60) +1;
+                if (anArray[i] == lotteryNumbers[j]){
+                    anArray[i] = newNum;
+                }
+            }
+        }
     }
 
 
@@ -55,9 +65,9 @@ public class Lottery {
     public static void getUserPicks() {
         Scanner keyboard = new Scanner(System.in);
 
-        System.out.printf("The numbers already generated are:\n%d\n%d\n%d\n%d\n%d\n%d\n", num1, num2, num3, num4, num5, num6);
+        System.out.printf("The numbers already generated are:\t%d\t%d\t%d\t%d\t%d\t%d\n", num1, num2, num3, num4, num5, num6);
 
-        System.out.println("Please enter your 6 lottery number choices\nNumbers from 1-60");
+        System.out.println("Please enter your 6 lottery number choices (Numbers from 1-60)");
 
         int userNumber;
         for (int i = 0; i<6; i++){
@@ -65,6 +75,7 @@ public class Lottery {
             userNumber = keyboard.nextInt();
             userLotteryPicks[i] = userNumber;
         }
+
 
         setUserNum1(userLotteryPicks[0]);
         setUserNum2(userLotteryPicks[1]);
@@ -76,6 +87,12 @@ public class Lottery {
 
     }
 
+    /*
+    *   This method checks to see how many matches the user got
+    *   It runs a nested loop to check every lotteryNumber item against each userLotteryPicks item
+    *   If there is a match, the counter variable increases by one
+    *   At the end, it returns the counter variable
+     */
     public static int checkLotteryMatch(){
 
         int counter = 0;
@@ -88,14 +105,13 @@ public class Lottery {
                     counter++;
                 }
             }
-
-
         }
 
         return counter;
     }
 
 
+    //Here are all the getter and setter methods
     public static int[] getLotteryNumbers() {
         return lotteryNumbers;
     }
@@ -207,4 +223,6 @@ public class Lottery {
     public static void setUserNum6(int userNum6) {
         Lottery.userNum6 = userNum6;
     }
+
+
 }

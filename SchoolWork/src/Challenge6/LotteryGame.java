@@ -2,18 +2,35 @@ package Challenge6;
 
 public class LotteryGame {
 
+    /*  Here in main I create an instance of the Lottery class called 'lotto'
+    *   Then I run the getUserPicks() method form the lotto class to start the program
+    *   I created an int variable called numberOfMatches that is equal to the int value returned from the checkLotteryMatch() method
+    *   Finally, there are a set of if, else-if statements that check to see what the value of numberOfMatches is
+    *   Depending on the value it tells the user what they've won or have not won
+     */
     public static void main(String[] args) {
 
         Lottery lotto = new Lottery();
 
-
         lotto.getUserPicks();
 
-        System.out.printf("Lotto numbers are: %d %d %d %d %d %d\n", lotto.lotteryNumbers[0], lotto.lotteryNumbers[1], lotto.lotteryNumbers[2], lotto.lotteryNumbers[3], lotto.lotteryNumbers[4], lotto.lotteryNumbers[5]);
+        int numberOfMatches = lotto.checkLotteryMatch();
 
-        System.out.printf("Your numbers are: %d %d %d %d %d %d\n", lotto.userLotteryPicks[0],lotto.userLotteryPicks[1],lotto.userLotteryPicks[2],lotto.userLotteryPicks[3],lotto.userLotteryPicks[4], lotto.userLotteryPicks[5]);
-
-        System.out.println("The amount of matches is: " + lotto.checkLotteryMatch());
+        if(numberOfMatches == 3){
+            System.out.println("You have won an a free lottery ticket!");
+        }
+        else if (numberOfMatches ==4){
+            System.out.println("You have won a $2,000 prize!");
+        }
+        else if (numberOfMatches == 5){
+            System.out.println("You have won a $50,000 prize!");
+        }
+        else if (numberOfMatches == 6){
+            System.out.println("You have won a $1,000,000 grand prize!");
+        }
+        else {
+            System.out.println("Sorry, no matches today. Try again");
+        }
 
     }
 }
