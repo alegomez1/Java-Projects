@@ -13,8 +13,6 @@ public class LotteryGame {
 
         System.out.printf("Your numbers are: %d %d %d %d %d %d\n", lotto.userLotteryPicks[0],lotto.userLotteryPicks[1],lotto.userLotteryPicks[2],lotto.userLotteryPicks[3],lotto.userLotteryPicks[4], lotto.userLotteryPicks[5]);
 
-        lotto.setNum1(lotto.userNum1);
-
         System.out.println("The amount of matches is: " + lotto.checkLotteryMatch());
 
     }
