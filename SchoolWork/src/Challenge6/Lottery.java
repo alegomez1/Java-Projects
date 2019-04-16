@@ -33,6 +33,22 @@ public class Lottery {
         lotteryNumbers[4] = num5;
         lotteryNumbers[5] = num6;
 
+        checkDuplicates(lotteryNumbers, 5);
+
+    }
+
+    public static boolean checkDuplicates(int[] anArray, int aNumber){
+
+        boolean value = false;
+        for(int i = 0; i < 6; i++){
+            if(aNumber == anArray[i]){
+                value = true;
+            }
+            else {
+                value = false;
+            }
+        }
+        return value;
     }
 
     /*
