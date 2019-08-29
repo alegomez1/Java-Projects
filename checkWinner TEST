@@ -1,0 +1,37 @@
+public void checkWinner(){
+//checking A's across
+if( (a1.equals("x") && a2.equals("x") && a3.equals("x")) || (a1.equals("o") && a2.equals("o") && a3.equals("o"))) {
+sout("winner!");
+}
+//checking 1 down
+if( (a1.equals("x") && b1.equals("x")&& c1.equals("x") ) || (a1.equals("o") && b1.equals("o")&& c1.equals("o") )) {
+sout("winner");
+}
+//checking B's across
+if( (b1.equals("x") && b2.equals("x") && b3.equals("x")) || (b1.equals("o") && b2.equals("o") && b3.equals("o"))) {
+sout("winner!");
+}
+//checking 2 down
+if( (a2.equals("x") && b2.equals("x")&& c2.equals("x") ) || (a2.equals("o") && b2.equals("o")&& c2.equals("o") )) {
+sout("winner");
+}
+
+//checking C's across
+if( (c1.equals("x") && c2.equals("x") && c3.equals("x")) || (c1.equals("o") && c2.equals("o") && c3.equals("o"))) {
+sout("winner!");
+}
+
+//checking 3 down
+if( (a3.equals("x") && b3.equals("x")&& c3.equals("x") ) || (a3.equals("o") && b3.equals("o")&& c3.equals("o") )) {
+sout("winner");
+}
+//checking right diagonal A1 B2 C3
+if( (a1.equals("x") && b2.equals("x") && c3.equals("x") ) || (a1.equals("o") && b2.equals("o") && c3.equals("o") ) ) {
+sout("winner")
+}
+//checking other diagonal C1 B2 A3
+if( (c1.equals("x") && b2.equals("x") && a3.equals("x") ) || (c1.equals("o") && b2.equals("o") && a3.equals("o") ) ) {
+sout("winner");
+}
+
+}
